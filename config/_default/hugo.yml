@@ -1,0 +1,42 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Allen's Corner of the World
+theme: PaperMod
+
+params:
+  # theme params
+  defaultTheme: light
+  disableThemeToggle: true
+  editPost:
+    URL: "https://github.com/allen-liaoo/alblog/tree/main/content"
+    Text: "View on GitHub" # edit text
+    appendFilePath: true # to append file path to Edit link
+  comments: true
+  ShowCodeCopyButtons: true
+
+  assets:
+    disableHLJS: true
+
+taxanomies:
+  tags: tags
+
+menu:
+  main:
+  - identifier: about
+    name: About
+    pageRef: page/about.md
+    weight: 10
+  - identifier: tags
+    name: Tags
+    pageRef: /tags/
+    weight: 20
+  - identifier: search
+    name: Search
+    pageRef: /search.md
+    weight: 30
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
