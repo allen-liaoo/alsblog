@@ -4,6 +4,8 @@ date: 2024-04-04T22:30:23-05:00
 type: post
 draft: true
 tags: ["test"]
+ShowToc: true
+TocOpen: true
 ---
 
 ```go

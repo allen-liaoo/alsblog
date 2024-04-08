@@ -4,7 +4,10 @@
   MathJax = {
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  // block
-      inlineMath: [['\\(', '\\)'],['$','$']]                  // inline
+      inlineMath: [['\\(', '\\)'],['$','$']],       // inline
+      macros: {
+        gcode: ["\\ulcorner #1 \\urcorner", 1]
+      }
     }
   };
 </script>

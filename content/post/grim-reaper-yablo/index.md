@@ -10,40 +10,66 @@ cover:
   relative: true
 ---
 
+This article assumes that the reader is comfortable with logical notation in predicate calculus.
+
 ## Introduction
-Ok, the title is a bit of a click bait. I have a particular version of the Grim Reaper paradox in mind, namely the one that many uses to argue against the *logical* or *metaphysical* possibility of an infinite past.[^1] Here, I will show how this version of the Grim Reaper paradox is the Yablo paradox in disguise (although with some ~~important~~ differences), why that matters, and drawing from their parallel, conclude with why the paradox fails to show the *im*possibility of an infinite past.
-[^1]: See Alex Malpass discussion of it [here](https://useofreason.wordpress.com/2020/01/07/the-paradox-of-dry-eternity/) (I can't find the papers that he refers to anymore).
+Ok, the title is a bit of a click bait. I have a particular version of the Grim Reaper paradox in mind, namely the one that many uses to argue against the *logical* or *metaphysical* possibility of an infinite past. Here, I will show how this version of the Grim Reaper paradox is the Yablo paradox in disguise (although with some ~~important~~ differences), why that matters, and drawing from their parallel, conclude with why the Grim Reaper paradox fails to show the *im*possibility of an infinite past.
 
 ## The Twinning Paradoxes
-I prefer [this version](https://useofreason.wordpress.com/2020/07/12/the-logical-form-of-the-grim-reaper-paradox/) of the paradox (let's call it the **Printer Paradox**):
-> Suppose the past has no beginning. There is an eternal machine such that each day at midnight, it checks to see if it has printed out anything yet from its printer. If it has, then it hibernates for the rest of the day. If it has not printed anything out yet, it immediately prints out the date and then hibernates for the rest of the day.
-> 
-> This is enough to generate our paradox. If it had not already printed anything out, this means that yesterday it would have run the same check and printed out the date. So it can’t be that the machine finds nothing printed out today. But that applies also to yesterday too, and every previous day. So although it can’t be that no date is printed out, no date could be printed on the paper. [Quote]
+### Grim Reaper Paradox
+This is the Grim Reaper paradox (GM):
+> Suppose that the temporal series of past events is [actually infinite](https://en.wikipedia.org/wiki/Actual_infinity) and that an actually infinite number of Grim Reapers exist. Suppose also that, at each [day in the past], a unique Reaper was assigned to issue a death warrant iff no previous Reaper had already issued a death warrant. ([Cohen on the Kalam Cosmological Argument](https://philarchive.org/archive/COHEFA-2), p. [11]) [^1]
 
-The logical structure of the paradox is pretty clear. Again I quote Alex:
->1. There is no first time $t$
->2. For all $t$, ($P$ at $t$ iff for all $t’$, (if $t ' \lt t$, then $\lnot P$ at $t$))  
->[Quote]
+For a proof of why it is contradictory, see Alex Malpass extended discussion of it [here](https://useofreason.wordpress.com/2020/01/07/the-paradox-of-dry-eternity/).
+[^1]: There is no mention of the Yablo paradox in any of the discussions of this paradox that I can find.
 
-Contrasting this with the [Yablo paradox](https://en.wikipedia.org/wiki/Stephen_Yablo#Yablo's_paradox), which involves an infinitely long list of sentences:  
->$S_1$. For all $i \gt 1$, $S_i$ is not true.  
->$S_2$. For all $i \gt 2$, $S_i$ is not true.  
->$S_3$. For all $i \gt 3$, $S_i$ is not true.  
->...
+The logical structure of the paradox is pretty clear. Here I will take [Malpass's presentation](https://useofreason.wordpress.com/2020/07/12/the-logical-form-of-the-grim-reaper-paradox/) of an alternative (but equivalent) version of the Grim Reaper's paradox and modify it to fit our version:
+>Let $G_t$ be the proposition: "Grim reaper $g_t$ issues a death warrant (at time $t$)."
+> 1. There is no first time $t$
+> 2. For all $t$, $G_t \leftrightarrow$ (for all $t’$, $t ' \lt t \rightarrow \lnot G_{t'}$)  
 
-We also need to consider what is called the *T-schema*:
-> T-Schema: $S$ is true iff $S$  
+With the logical structure of the Grim Reaper paradox in mind, let's take a look at the Yablo paradox.
+### Yablo Paradox
+The [Yablo paradox](https://en.wikipedia.org/wiki/Stephen_Yablo#Yablo's_paradox) involves an infinitely long list of sentences:  
+>$S_1$= For all $i \gt 1$, $\lnot$("$S_i$" is true).  
+>$S_2$= For all $i \gt 2$, $\lnot$("$S_i$" is true).  
+>$S_3$= For all $i \gt 3$, $\lnot$("$S_i$" is true).  
+>...[^2]
+[^2]: I wanted to emphasize the predicate `... is true` here, so I used $\lnot$. I could as well just write '"$S_i$" is *not* true', which would be an equivalent way of stating things.
 
-Now we can prove a contradiction:  
-Consider some arbitrary $k$, suppose that $S_k$ is true, then for any $i \gt k$, $S_k$ is not true. Then $S_{k+1}$ is not true. But because $S_k$ is true, that means that for any $j \gt {k+1}$, $S_{j}$ is not true. So $S_{k+1}$ must be true! Contradiction.  
-Because $k$ was chosen arbitrarily, we have proven that for any $k$, $S_k$ is true. So for any $l \gt 2$, $S_l$ is true. So $S_1$ is true. But we just proved that all sentences on the list is not true, including $S_1$! Contradiction again.
+Note the use of quotes around each $S_i$: this concerns the [use-mention distinction](https://en.wikipedia.org/wiki/Use%E2%80%93mention_distinction). Each of $S_1$, $S_2$ is a sentence,  and quoting a sentence enables us to *refer* to the sentence. For eample, consider the sentence `I love bagels` (let's call it B). `"I love bagels" is true` is meaningful, whereas `I love bagels is true` is not. If I write `B`, that means that I love bagels (literally!). if I write `"B"`, then I'm talking about the sentence `"I love bagels"`, but not necessarily asserting it. From now on, we will follow this convention. 
 
-How does all of this relates to the Printer/Grim Reaper paradox? Well, if we think of the printer $p$ as different printers at each day, and we assign yesterday the number $1$, the day before yesterday the number $2$, and so on, we have an infinitely long list of sentences that says:  
->1. $p_1$ prints iff for all $i \gt 1$, $p_i$ did not print.  
->1. $p_2$ prints iff for all $i \gt 2$, $p_i$ did not print.  
->1. $p_3$ prints iff for all $i \gt 3$, $p_i$ did not print.  
+Each sentence on the list has `... is true`, which is what's called the *truth predicate*. To reason about the truth predicate, we need the T-Schema:
+> **T-Schema**: $\phi\leftrightarrow$ ($\phi$ is true)  
+
+The T-Schema allow us to go from saying a sentence is true to "asserting" that sentence. With it, we can now prove a contradiction:
+{{% proof %}}
+Consider some arbitrary $k$, suppose that "$S_k$" is true, then, by the T-Schema, $S_k$. So, for any $i \gt k$, "$S_k$" is not true. Then "$S_{k+1}$" is not true.  Similarly, for any $j \gt {k+1}$, "$S_{j}$" is not true. So $S_{k+1}$, and by the T-Schema, "$S_{k+1}$" is true! Contradiction.  
+So $S_k$ is not true. Because $k$ was chosen arbitrarily, we have proven that for any $k$, "$S_k$" is not true. So for any $l \gt 2$, "$S_l$" is not true. So "$S_1$" is true. But we just proved that all sentences on the list is not true, including $S_1$! Contradiction again.
+{{% /proof %}}
+
+### Similarity
+How does all of this relates to the GM paradox? Well, we just need to *count backwards*. If we assign yesterday the number $1$, the day before yesterday the number $2$, and so on, we have an infinitely long list of sentences that says:  
+>$G_1'$= For all $t \gt 1$, $\lnot G_t'$.  
+>$G_2'$= For all $t \gt 2$, $\lnot G_t'$.  
+>$G_3'$= For all $t \gt 3$, $\lnot G_t'$.  
 >...  
 
-At first glance, this might look different still. What does the start of the sentences ($p_1$ prints...) corresponds to? Well, they corresponds to the T-Schema! 
+This is not similar enough to the GM paradox yet. Each of $G_t'$ is distinct from $G_t$ because $G_t'$ does not say anything about issuing death warrants. To see the similarity, consider this additional principle:
+>**G-Schema**: $G_t \leftrightarrow G_t'$
 
-There is, however, an important difference: The Yablo paradox is utilizes the [truth predicate](https://en.wikipedia.org/wiki/Truth_predicate), whereas the Printer/Grim Reaper paradox is just about... printers? 
+Notice that the G-Schema was in (2) when we the discussed the [GM paradox](#grim-reaper-paradox-gm). How do we use this to derive a contradiction? Exactly the same way we derived a contradiction in the [Yablo paradox](#yablo-paradox)! In case you're not convinced, here is the proof:
+
+{{% proof a %}}
+Consider some arbitrary $k$, suppose that $G_k$, then, by the G-Schema, $G_k'$. So, for any $t \gt k$, $\lnot G_t'$. Then $\lnot G_{k+1}'$.  Similarly, for any $s \gt {k+1}$, $\lnot G_{s}'$. So $G_{k+1}'$! Contradiction.  
+So $\lnot G_k$ is not true. Because $k$ was chosen arbitrarily, we have proven that for any $k$, $\lnot G_k$. So for any $k$, $\lnot G_k'$. That entails for any $l \gt 2$, $\lnot G_l'$. Hence, $G_1'$. But we just proved that all sentences on the list is not true, including $G_1'$! Contradiction again.
+{{% /proof %}}
+
+### Variants of the Grim Reaper
+If the Grim Reaper and the Yablo paradox are this similar, can we come up with variants of the Grim Reaper paradox based on variants of the Yablo paradox? 
+
+Hopefully by now, you are convinced that there is at least some structural similarities between the Grim Reaper and the Yablo paradox. Obviously there are some glaring differences: The Yablo paradox involves the *truth predicate*, whereas the Grim Reaper paradox involves the "issues a death warrant" predicate. The *truth predicate* is notorious for generating contradictions
+
+## Relation to the Liar Paradoxes
+
+## Impossibility of an Infinite Past?

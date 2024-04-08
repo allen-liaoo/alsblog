@@ -1,0 +1,35 @@
+:root {
+    --primary-custom: rgb(167, 155, 143)
+}
+
+.post-content blockquote {
+    border-inline-start: 3px solid var(--primary-custom);
+    background-color: rgb(255, 249, 235);
+    border-radius: 3px;
+}
+
+.post-content a {
+    box-shadow: 0 1px rgb(255, 178, 84);;
+}
+
+/* proof shortcode */
+.post-content .proof {
+    /* background-color: rgb(255, 250, 236); */
+    border-color: var(--primary-custom);
+    border-style: dashed;
+    border-left-style: solid;
+    border-right-style: solid;
+    /* border-top-style: solid;
+    border-bottom-style: solid; */
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 0.5em;
+    overflow: auto; /* prevent qed from going outside of box */
+}
+
+.post-content .proof .qed {
+    float: right;
+    text-align: right;
+    padding-left: 0;
+    margin: 0;
+}

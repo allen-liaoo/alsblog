@@ -9,10 +9,6 @@ comments: true
 ShowBreadCrumbs: true
 ShowCodeCopyButtons: true
 
-homeInfoParams:
-  Title: Welcome!
-  Content: 
-
 socialIcons: # optional
   - name: "Github"
     url: "https://github.com/allen-liaoo/"
