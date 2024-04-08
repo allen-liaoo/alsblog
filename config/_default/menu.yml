@@ -1,0 +1,17 @@
+main:
+  - identifier: about
+    name: About
+    pageRef: page/about.md
+    weight: 10
+  - identifier: posts
+    name: Posts
+    pageRef: /posts/
+    weight: 20
+  - identifier: tags
+    name: Tags
+    pageRef: /tags/
+    weight: 30
+  - identifier: search
+    name: Search
+    pageRef: /search.md
+    weight: 40

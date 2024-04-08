@@ -1,0 +1,33 @@
+# theme params
+defaultTheme: light
+disableThemeToggle: true
+editPost:
+  URL: "https://github.com/allen-liaoo/alblog/tree/main/content"
+  Text: "View Source" # edit text
+  appendFilePath: true # to append file path to Edit link
+comments: true
+ShowBreadCrumbs: true
+ShowCodeCopyButtons: true
+
+homeInfoParams:
+  Title: Welcome!
+  Content: 
+
+socialIcons: # optional
+  - name: "Github"
+    url: "https://github.com/allen-liaoo/"
+  - name: "email"
+    url: "mailto://wcliaw610@gmail.com"
+
+# fuse.js search options
+fuseOpts:
+  shouldSort: true
+  includeMatches: true
+  threshold: 0.5
+  keys: ["title", "permalink", "summary", "content"]
+
+assets:
+  disableHLJS: true # disable papermod's highlight.js
+
+# math mode on by default
+math: true

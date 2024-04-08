@@ -1,10 +1,9 @@
 ---
-title: 'First'
+title: 'Markdown Crash Test'
 date: 2024-04-04T22:30:23-05:00
 type: post
 draft: true
 tags: ["test"]
-math: true
 ---
 
 ```go
@@ -15,8 +14,6 @@ func main() {
 	fmt.Println("Hello, World!")
 }
 ```
-
-[Markdown Cheatsheet]({{< ref "page/markdown_cheatsheet.md">}})
 
 $$
 \begin{aligned}
@@ -31,38 +28,701 @@ $$
 \RightLabel{Hyp$^{1}$}
 \UnaryInfC{$P$}
 \end{prooftree}
-% \AXC{$P\to Q$}
-% \RL{$\to_E$}
-% \BIC{$Q^2$}
-% \AXC{$Q\to R$}
-% \RL{$\to_E$}
-% \BIC{$R$}
-% \AXC{$Q$}
-% \RL{Rit$^2$}
-% \UIC{$Q$}
-% \RL{$\wedge_I$}
-% \BIC{$Q\wedge R$}
-% \RL{$\to_I^1$}
-% \UIC{$P\to Q\wedge R$}
-%\end{prooftree}
 $$
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo quam vestibulum, malesuada ante et, scelerisque sem. Nunc ac lobortis dui, eu laoreet est. Suspendisse id orci in augue molestie ultrices. Suspendisse potenti. Aenean ut magna eu sapien viverra malesuada a ut nisl. Nunc nulla neque, blandit ac ipsum sit amet, euismod rhoncus dolor. Etiam vestibulum accumsan lacus, eu varius lectus euismod eu. Maecenas ac sapien lobortis, viverra ligula non, pulvinar elit. Donec vulputate vestibulum mi id ultrices. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi sit amet laoreet odio. Donec quis hendrerit velit. Sed sollicitudin interdum malesuada. Donec aliquet vitae purus blandit mollis. Mauris molestie erat odio, et rhoncus purus consequat ac. Suspendisse ultricies ipsum nec elit condimentum iaculis.
+## Benchmarking the support of Markdown with a comprehensive checklist
 
-Aliquam dictum tempor magna et dictum. Fusce pretium neque velit, eu feugiat sapien condimentum vitae. Aenean a feugiat tortor. Nullam ut eros nunc. Vivamus cursus nec nulla quis aliquet. Aenean eu rhoncus ipsum. Ut a lacus nec metus porta hendrerit tempor vel erat. Morbi ultrices pharetra quam eget hendrerit. Donec porta ornare erat ac lobortis. Donec id nulla enim. In hac habitasse platea dictumst.
 
-Pellentesque ornare elementum dolor vitae rhoncus. Phasellus odio ligula, vestibulum eget hendrerit id, eleifend et lorem. Nulla ut purus lorem. Pellentesque placerat quam id massa laoreet, non hendrerit erat tristique. Sed mi dolor, ornare ut tristique in, dictum dictum sapien. Fusce at pulvinar sem, id finibus lacus. Cras scelerisque arcu faucibus risus laoreet, at feugiat turpis finibus. Curabitur malesuada justo non dignissim sodales. Phasellus ullamcorper lorem mi, accumsan feugiat metus scelerisque ac. Sed quis mauris at dui convallis commodo non sed velit. Vestibulum imperdiet eget nunc vel convallis. Proin pulvinar luctus rutrum. Aliquam venenatis nulla magna, nec euismod velit feugiat et. Quisque venenatis turpis condimentum lacus efficitur lobortis. Morbi pretium gravida odio sed placerat. Curabitur gravida ut est ac tempus.
+**You're working on a project featuring Markdown?**
 
-Mauris interdum, nisl at commodo luctus, dolor mauris vehicula odio, sit amet cursus tortor lectus sit amet nisl. Donec nibh urna, cursus ut est id, pellentesque pharetra urna. Nullam lobortis quis nisl sit amet porttitor. Praesent interdum aliquam facilisis. Donec sodales venenatis vulputate. Integer vehicula viverra lectus, quis tincidunt augue gravida non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi luctus euismod fermentum. Duis eleifend libero nibh, in feugiat dolor maximus pellentesque. Vestibulum sagittis justo ipsum, ultricies egestas risus gravida ut. Aliquam sit amet fermentum sapien.
+Drop [the source of this page](https://raw.githubusercontent.com/RoneoOrg/markdown/main/README.md) wherever you want to test *or showcase* the support of Markdown, and check that every single feature is properly rendered.
 
-Etiam eget leo a elit gravida commodo quis a purus. Nam posuere arcu sed purus egestas, nec sollicitudin mi efficitur. Mauris at urna a ligula blandit fringilla. Nulla eget turpis feugiat, efficitur velit sed, vulputate tortor. Vestibulum orci lacus, sagittis at eros eget, rhoncus faucibus dolor. Nullam id bibendum felis. Nullam eget dolor porta, elementum risus eget, iaculis augue. Quisque placerat rhoncus consequat. Ut nulla massa, interdum eget erat sit amet, ullamcorper vulputate tellus. Vivamus feugiat laoreet leo. Praesent condimentum ultricies tellus eu pellentesque. Sed eleifend diam nec nisi auctor, vitae porta est iaculis. Nam nec feugiat erat. Ut ultricies viverra libero. Aenean consectetur dictum lacinia. Sed tincidunt sit amet arcu ut faucibus.
 
-Nullam at ipsum nulla. Suspendisse at blandit nisl, nec accumsan elit. Quisque at mi nec ipsum consequat egestas auctor ac urna. Quisque accumsan tellus luctus diam condimentum vestibulum. Phasellus non enim a nisi dictum fringilla. Aenean sagittis sodales magna eu ornare. Aenean condimentum sem in nulla tempus vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam scelerisque felis non elit euismod sagittis. Phasellus vehicula dignissim libero sollicitudin rutrum. Sed pretium sollicitudin ligula, nec auctor est porta sit amet. Suspendisse fringilla nisi et faucibus sodales. Nunc egestas suscipit eros id blandit.
+**Table of Contents**
 
-Morbi at semper purus. Vivamus venenatis finibus venenatis. Maecenas placerat, mi sit amet dapibus ultricies, mauris turpis lacinia enim, consectetur tincidunt dui libero et turpis. Etiam id fermentum nunc. Sed nunc orci, fermentum quis ante et, congue fermentum lectus. Ut a ultrices erat. Curabitur at posuere augue. Fusce non nibh a justo egestas venenatis. Etiam molestie iaculis lorem vulputate finibus. Mauris fringilla, orci sed vulputate dignissim, diam tellus interdum diam, sed cursus augue elit vitae tortor. Integer ut turpis eleifend, venenatis justo eu, ullamcorper massa. Praesent tristique magna vel suscipit ullamcorper. Vivamus ornare pharetra sapien non rutrum. Quisque vestibulum ultricies felis, in pellentesque quam tincidunt vitae. Cras cursus libero turpis, sit amet gravida purus sodales non.
+- [Basic formatting](#basic-formatting)
+- [Blockquotes](#blockquotes)
+- [Lists](#lists)
+- [Linebreaks](#linebreaks)
+- [Links](#links)
+- [Code formatting](#code-formatting)
+- [Images](#images)
+- [Task lists](#task-lists)
+- [Tables](#tables)
+- [Footnotes](#footnotes)
+- [Definition List](#definition-list)
+- [Headings](#headings)
 
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse quis semper nulla. Vestibulum non orci in dolor ultricies suscipit ac in magna. Ut non feugiat metus, nec cursus mauris. Nam felis sem, placerat et massa vel, tincidunt fermentum risus. Sed eget nisi eu mi pharetra dignissim at et lacus. Sed semper elit at dolor placerat, eget eleifend diam tempor. In in feugiat neque. Sed non urna ac ex hendrerit tincidunt quis ac elit. Vivamus quis neque malesuada, vulputate nibh dignissim, accumsan lectus. Phasellus mattis erat eu auctor consequat. Duis nulla purus, dignissim in lobortis eget, euismod vitae tortor. Aliquam ut metus sit amet neque vehicula viverra ac et nibh. Phasellus eros nisi, tristique at mollis quis, tincidunt at ipsum. Nulla in nisi nec mauris hendrerit bibendum in et risus. Duis vel ultricies mi.
 
-Maecenas quis purus porttitor, consectetur sapien sit amet, facilisis dolor. Vestibulum dictum ante porttitor turpis dapibus, at tristique mi auctor. Sed gravida mauris id viverra tincidunt. Suspendisse tellus magna, lacinia et odio sed, sollicitudin vestibulum metus. Quisque eget porttitor diam. Pellentesque sed turpis quis urna fermentum hendrerit. Suspendisse potenti.
+## Basic formatting
 
-Nullam auctor massa vel mi placerat fermentum. Sed elementum eros id dolor vestibulum tincidunt. Proin et molestie felis, nec finibus odio. Aenean id placerat tortor. Curabitur bibendum nunc in congue sagittis. Nulla facilisi. Duis gravida molestie scelerisque. 
+### **Bold** text
+
+**Syntax:**
+
+    You can mark some text as bold with **two asterisks**
+    or __two underscores__.
+
+**Output:**
+
+You can mark some text as bold with **two asterisks**
+or __two underscores__.
+
+### *Italic*
+
+    Use a *single asterisk* or a _single underscore_ for italic.
+
+**Output:**
+
+Use a *single asterisk* or a _single underscore_ for italic.
+
+### ***Bold and italic***
+
+    Three stars gives `***bold and italic***`
+
+Three stars gives ***bold and italic***
+
+### ~~Strikethrough~~
+
+Using `~~two tildes~~` will strikethrough:  ~~two tildes~~
+
+
+
+## Blockquotes
+
+**Syntax:**
+
+    > blockquote
+
+**Output**:
+
+> blockquote
+
+### Nested blockquotes
+
+**Syntax:**
+
+    > First level
+    >
+    >> Second level
+
+**Output:**
+
+> First level
+>> Second level
+
+### Markdown in blockquotes
+
+```
+> **Markdown** can be used *inside quotes*
+>
+> 1.   This is the first list item.
+> 1.   This is the second list item.
+>
+> ~~strikethrough~~
+>
+> Here's some example code:
+>
+>     return shell_exec("echo $input | $markdown_script");
+```
+
+**Output:**
+
+> **Markdown** can be used *inside quotes*
+> 1. This is the first list item.
+> 1. This is the second list item.
+>
+> ~~strikethrough~~
+>
+> Here's some example code:
+>
+>     return shell_exec("echo $input | $markdown_script");
+
+
+## Lists
+
+
+### Unordered list
+
+Cant be marked with `-`, `+` or `*`
+
+```markdown
+- First item
+- Second item
+- Third item
+```
+
+```markdown
++ First item
++ Second item
++ Third item
+```
+
+```markdown
+* First item
+* Second item
+* Third item
+```
+
+**Output:**
+
+- First item
+- Second item
+- Third item
+
++ First item
++ Second item
++ Third item
+
+* First item
+* Second item
+* Third item
+
+### Ordered lists
+
+Incrementation is automatic, you can simply use `1.` everywhere
+
+```
+1. First item
+1. Second item
+1. Third item
+```
+
+**Output:**
+
+1. First item
+1. Second item
+1. Third item
+
+
+
+### Nested list
+
+```
+- First item
+- Second item
+- Third item
+  1. Indented item
+  1. Indented item
+- Fourth item
+```
+
+**Output:**
+
+- First item
+- Second item
+- Third item
+  1. Indented item
+  1. Indented item
+- Fourth item
+
+
+## Linebreaks
+
+**When you hit enter just once** between two lines, both lines are joined into a single paragraph.
+
+But, if you **leave a blank line between them**, they will split into two paragraphs.
+
+**Demonstration**:
+
+```
+This text is a paragraph.
+This won't be another paragraph, it will join the line above it.
+
+This will be another paragraph, as it has a blank line above it.
+```
+
+**Output:**
+
+This text is a paragraph. This won't be another paragraph, it will join the line above it.
+
+This will be another paragraph, as it has a blank line above it.
+
+### Force line breaks
+
+To force a line break, **end a line with two or more whitespaces**, and then type return.
+
+```
+This is the first line.··
+Second line
+```
+
+**Output:**
+
+This is the first line.  
+Second line
+
+### Horizontal lines
+
+Can be inserted with four `*`, `-` or `_`
+
+```
+----
+
+****
+
+____
+```
+
+**Output:**
+
+----
+
+****
+
+____
+
+
+
+
+## Links
+
+
+### Basic links
+
+```
+[Semantic description](https://roneo.org/markdown)  
+<address@example.com>  
+<https://roneo.org/markdown> works too. Must be used for explicit links.
+```
+
+**Output:**
+
+[Semantic description](https://roneo.org/markdown)  
+<address@example.com>  
+<https://roneo.org/markdown> works too. Must be used for explicit links.
+
+
+### Links using text reference
+
+```
+[I'm a link][Reference text]
+
+[This link] will do the same as well. It works as the identifier itself.
+
+
+[reference text]: https://jamstack.club
+[this link]: https://roneo.org/markdown
+```
+
+**Output:**
+
+[I'm a link][Reference text]
+
+[This link] will do the same as well. It works as the identifier itself.
+
+
+[reference text]: https://jamstack.club
+[this link]: https://roneo.org/markdown
+
+**Note:** The reference text is *not* case sensitive
+
+
+### Link with a title on hover
+
+```
+[Random text][random-identifier].
+Hover the mouse over it to see the title.
+
+Several syntaxes are accepted:
+[One](https://eff.org "First site")
+[Two](https://example.com 'Second site')
+[Three](https://example.com (Third site))
+
+[random-identifier]: https://roneo.org/markdown "This example has a title"
+```
+
+**Output:**
+
+[Random text][random-identifier]. Hover the mouse over it to see the title.
+
+Several syntaxes are accepted:
+[One](https://eff.org "First site")
+[Two](https://jamstack.club 'Second site')
+[Three](https://debian.org (Third site))
+
+[random-identifier]: https://roneo.org/markdown "This example has a title"
+
+
+### Links with Markdown style
+
+To ***emphasize*** links, add asterisks before and after the brackets and parentheses.
+
+    I love supporting the **[EFF](https://eff.org)**.  
+    This is the *[Markdown Guide](https://www.markdownguide.org)*.
+
+To denote links as `code`, add backticks *inside* the brackets:
+
+    See the section on [`code`](#code).
+
+**Output:**
+
+I love supporting the **[EFF](https://eff.org)**.  
+This is the *[Markdown Guide](https://www.markdownguide.org)*.  
+See the section on [`code`](#code).
+
+
+### Attribute a custom anchor to a heading
+
+Anchors are automatically generated based on the heading's content. You can customize the anchor this way:
+
+    ### Heading {#custom-id}
+
+**Output:**
+
+#### Heading {#custom-id}
+
+
+
+## Code formatting
+
+
+### Inline
+
+Wrap with single backticks to highlight as`` `code` `` → `code`
+
+### Codeblocks
+
+Create a code block with three backticks `` ``` `` before and after your block of code.
+
+**Output:**
+
+
+```
+sudo apt hello
+cat /etc/apt/sources.list
+```
+
+Also possible with a tabulation or four empty spaces at the beginning of the lines:
+
+**Tabulation**
+
+	sudo apt hello
+	echo "hi"
+
+**Four whitespaces**
+
+    sudo apt hello
+
+Let's test the wrapping of a long line:
+
+	apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test
+
+### Codeblocks with syntax highlighting
+
+Set the language right after the first backticks (for example `` ```html  ``) to get syntax highlighting
+
+#### Samples:
+
+
+#### HTML
+
+```html
+<!DOCTYPE html>
+<html lang="fr" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+```
+
+#### CSS
+
+```css
+/* Comment */
+.blog-post h2, h3 {
+  margin-top: 1.6em;
+  margin-bottom: 0.8em;
+}
+```
+
+#### Bash
+
+```bash
+# Comment
+
+if [[ ! $system =~ Linux|MacOS|BSD ]]; then
+	echo "This version of bashtop does not support $system platform."
+
+sudo apt install test
+```
+
+#### Diff
+
+```diff
+- delete
++ add
+! test
+# comment
+```
+
+### Escaping with backslashes
+
+Any ASCII punctuation character may be escaped using a single backslash.
+
+Example:
+
+    \*this is not italic*
+
+**Output:**
+
+\*this is not italic*
+
+Markdown provides backslash escapes for the following characters:
+
+    \   backslash
+    `   backtick
+    *   asterisk
+    _   underscore
+    {}  curly braces
+    []  square brackets
+    ()  parentheses
+    #   hash mark
+	+	plus sign
+	-	minus sign (hyphen)
+    .   dot
+    !   exclamation mark
+
+
+## Images
+
+### Basic syntax
+
+``` markdown
+  ![Semantic description of the image](https://roneo.org/img/ok.png)
+```
+
+![Semantic description of the image](https://roneo.org/img/ok.png)
+
+**Note: The text inside the square brackets is important!**
+
+Screen reader users get informations about the image with this attribute called `ALT`, for _alternative text_.
+
+Including **descriptive** alt text [helps maintain accessibility](https://webaim.org/techniques/alttext/) for every visitor and should always be included with an image. When you add alt text be sure to describe the content and function of the picture.  
+In addition to the accessibility benefits, `ALT` is useful for SEO. It's also displayed when, for some reason, the picture is not loaded by the browser.
+
+
+### Image with title and caption
+
+```
+![Semantic description](https://roneo.org/img/ok.png "Your title")*Your caption*
+```
+
+![Semantic description](https://roneo.org/img/ok.png "Your title")*Your caption*
+
+
+### Clickable images
+
+For clickable images, simply wrap the image markup into a [link markup](#links):
+
+```
+[![Semantic description](https://roneo.org/img/ok.png "Your title")](http://jamstack.club)
+```
+
+**Output:**
+
+[![Semantic description](https://roneo.org/img/ok.png "Your title")](http://jamstack.club)
+
+
+
+### Image with an identifier
+
+You can call the image with an identifier as we do for [links](#links)
+
+```
+![Semantic desc.][image identifier]
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
+
+[image identifier]: https://roneo.org/img/ok.png "Title"
+```
+
+![Semantic desc.][image identifier]
+
+[image identifier]: https://roneo.org/img/ok.png "Title"
+
+
+## Task lists
+
+```
+- [X] Write the press release
+- [ ] Update the website
+```
+
+**Output:**
+
+- [x] Write the press release
+- [ ] Update the website
+
+
+
+## Tables
+
+
+```
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+```
+
+or
+
+```
+| Syntax | Description |
+| - | --- |
+| Header | Title |
+| Paragraph | Text|
+```
+
+will render the same way:
+
+| Syntax | Description |
+| - | --- |
+| Header | Title |
+| Paragraph | Text|
+
+
+### Text alignment in tables
+
+
+```
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
+```
+
+See the way the text is aligned, depending on the position of `':'`
+
+| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
+
+
+
+## Footnotes
+
+```
+Here's a sentence with a footnote[^1].
+(see the result at the bottom of the page)
+
+[^1]: This is the first footnote.
+```
+
+**Output:**
+
+Here's a sentence with a footnote[^1].  
+(see the result at the bottom of the page)
+
+[^1]: This is the first footnote.
+
+### Long footnote
+
+```
+Here's a longer one.[^bignote]
+(see the result at the bottom of the page)
+
+[^bignote]: Here's one with multiple paragraphs and code.
+	
+	Indent paragraphs to include them in the footnote.
+	
+	`{ my code }`
+	
+	Note that you can place the footnote anywhere you want in your article
+```
+
+**Output:**
+
+Here's a longer one.[^bignote]
+(see the result at the bottom of the page)
+
+[^bignote]: Here's one with multiple paragraphs and code.
+	
+	Indent paragraphs to include them in the footnote.
+	
+	`{ my code }`
+	
+	Note that you can place the footnote anywhere you want in your article
+
+
+
+## Definition List
+
+
+```
+term
+: definition
+
+second term
+: meaning
+
+complex term
+: long definition including **bold text**. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.
+```
+
+**Output:**
+
+term
+: definition
+
+second term
+: meaning
+
+complex term
+: long definition including **bold text**. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.
+
+
+## Headings
+
+Add `##` at the beginning of a line to set as Heading.  
+You can use up to 6 `#` symbols for the corresponding Heading levels
+
+
+```
+## Heading 1
+[...]
+
+###### Heading 6
+```
+
+
+## Heading 2
+
+pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
+
+
+### Heading 3 ##################################
+
+pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
+
+#### Heading 4
+
+pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
+
+##### Heading 5
+
+pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
+
+###### Heading 6
+
+pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
+
+
+## References
+
+- Source of this page: [roneo.org/markdown](https://roneo.org/markdown)
+- [Markdown Guide - Basic Syntax](https://www.markdownguide.org/basic-syntax)
+- [Markdown Guide - Extended Syntax](https://www.markdownguide.org/extended-syntax)
+- [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
+- [Markdown Guide at Gitlab.com](https://about.gitlab.com/handbook/markdown-guide/)
+- [CommonMark Spec](https://spec.commonmark.org/0.29/)
+
+## Related projects
+
+- https://github.com/ericwbailey/markdown-test-file
+- https://scottspence.com/posts/writing-with-markdown
+- https://codingnconcepts.com/markdown/markdown-syntax/
+- https://codeit.suntprogramator.dev/basic-markdown-syntax/
+- https://daringfireball.net/projects/markdown/syntax.text

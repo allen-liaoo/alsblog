@@ -1,25 +1,32 @@
-markup:
-  # math
-  defaultMarkdownHandler: goldmark
-  goldmark:
-    extensions:
-      passthrough:
-        delimiters:
-          block:
-          - - \[
-            - \]
-          - - $$
-            - $$
-          inline:
-          - - \(
-            - \)
-        enable: true
+# math
+defaultMarkdownHandler: goldmark
+goldmark:
+  extensions:
+    passthrough:
+      delimiters:
+        block:
+        - - \[
+          - \]
+        - - $$
+          - $$
+        inline:
+        - - \(
+          - \)
+        - - $
+          - $
+      enable: true
 
-  # code
-  highlight:
-    codeFences: true
-    guessSyntax: true
-    lineNos: true
-    lineNumbersInTable: true
-    noClasses: false
-    style: onedark
+# code
+highlight:
+  # anchorLineNos: true
+  codeFences: true
+  guessSyntax: true
+  lineNos: true
+  noClasses: false
+  style: onedark 
+  # style attr is useless
+  # need to override assets/css/includes/chroma-styles.css
+
+tableOfContents:
+  startLevel: 2
+  endLevel: 4
