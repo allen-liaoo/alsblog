@@ -4,4 +4,5 @@ date: {{ .Date }}
 type: post
 draft: true
 tags: []
+ShowToc: true
 ---
