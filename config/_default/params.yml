@@ -1,6 +1,8 @@
 # theme params
 defaultTheme: light
 disableThemeToggle: true
+label:
+  icon: favicon.png
 editPost:
   URL: "https://github.com/allen-liaoo/alblog/tree/main/content"
   Text: "View Source" # edit text
@@ -24,6 +26,9 @@ fuseOpts:
 
 assets:
   disableHLJS: true # disable papermod's highlight.js
+  favicon: favicon.png
+  favicon16x16: favicon.png
+  favicon32x32: favicon.png
 
 # math mode on by default
 math: true
