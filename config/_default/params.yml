@@ -1,21 +1,20 @@
 # theme params
-defaultTheme: light
-disableThemeToggle: true
-label:
-  icon: favicon.png
+defaultTheme: auto
+# disableThemeToggle: true
+favicon: favicon.png
+
+# per post settings
 editPost:
   URL: "https://github.com/allen-liaoo/alblog/tree/main/content"
   Text: "View Source" # edit text
   appendFilePath: true # to append file path to Edit link
 comments: true
+TocSide: left
+TocOpen: true
 ShowBreadCrumbs: true
 ShowCodeCopyButtons: true
 
-socialIcons: # optional
-  - name: "Github"
-    url: "https://github.com/allen-liaoo/"
-  - name: "email"
-    url: "mailto://wcliaw610@gmail.com"
+EnableInstantClick: true
 
 # fuse.js search options
 fuseOpts:
@@ -26,9 +25,12 @@ fuseOpts:
 
 assets:
   disableHLJS: true # disable papermod's highlight.js
-  favicon: favicon.png
-  favicon16x16: favicon.png
-  favicon32x32: favicon.png
 
 # math mode on by default
 math: true
+
+socialIcons: # optional for home page mode (not on)
+  - name: "Github"
+    url: "https://github.com/allen-liaoo/"
+  - name: "email"
+    url: "mailto://wcliaw610@gmail.com"

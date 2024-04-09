@@ -29,9 +29,9 @@ The logical structure of the paradox is pretty clear. Here I will take [Malpass'
 With the logical structure of the Grim Reaper paradox in mind, let's take a look at the Yablo paradox.
 ### Yablo Paradox
 The [Yablo paradox](https://en.wikipedia.org/wiki/Stephen_Yablo#Yablo's_paradox) involves an infinitely long list of sentences:  
->$S_1$= For all $i \gt 1$, $\lnot$("$S_i$" is true).  
->$S_2$= For all $i \gt 2$, $\lnot$("$S_i$" is true).  
->$S_3$= For all $i \gt 3$, $\lnot$("$S_i$" is true).  
+>$S_1$ = For all $i \gt 1$, $\lnot$("$S_i$" is true).  
+>$S_2$ = For all $i \gt 2$, $\lnot$("$S_i$" is true).  
+>$S_3$ = For all $i \gt 3$, $\lnot$("$S_i$" is true).  
 >$\vdots$  [^2]
 [^2]: I wanted to emphasize the predicate `... is true` here, so I used $\lnot$. I could as well just write '"$S_i$" is *not* true', which would be an equivalent way of stating things.
 
@@ -48,9 +48,9 @@ So $S_k$ is not true. Because $k$ was chosen arbitrarily, we have proven that fo
 
 ### Similarity
 How does all of this relates to the GM paradox? Well, we just need to *count backwards*. If we assign yesterday the number $1$, the day before yesterday the number $2$, and so on, we have an infinitely long list of sentences that says:  
->$G_1'$= For all $t \gt 1$, $\lnot G_t'$.  
->$G_2'$= For all $t \gt 2$, $\lnot G_t'$.  
->$G_3'$= For all $t \gt 3$, $\lnot G_t'$.  
+>$G_1'$ = For all $t \gt 1$, $\lnot G_t'$.  
+>$G_2'$ = For all $t \gt 2$, $\lnot G_t'$.  
+>$G_3'$ = For all $t \gt 3$, $\lnot G_t'$.  
 >$\vdots$
 
 This is not similar enough to the GM paradox yet. Each of $G_t'$ is distinct from $G_t$ because $G_t'$ does not say anything about issuing death warrants. To see the similarity, consider this additional principle:
@@ -74,7 +74,7 @@ If we flip the "for all" in each sentence into "there exists", we get an existen
 | Existential Yablo | |Existential GR |
 | :---------------- | ---- |:------------- |
 T-Schema: $\phi\leftrightarrow$ ($\phi$ is true) | | G-Schema: $G_t \leftrightarrow G_t'$
-$S_1$= there exists $i \gt 1$, $\lnot$("$S_i$" is true) <br /> $S_2$= there exists $i \gt 2$, $\lnot$("$S_i$" is true) <br />$S_3$= there exists $i \gt 3$, $\lnot$("$S_i$" is true) <br /> $\vdots$||$G_1'$= there exists $t \gt 1$, $\lnot G_t'$ <br /> $G_2'$= there exists $t \gt 2$, $\lnot G_t'$ <br /> $G_3'$= there exists $t \gt 3$, $\lnot G_t'$ <br /> $\vdots$
+$S_1$ = there exists $i \gt 1$, $\lnot$("$S_i$" is true) <br /> $S_2$ = there exists $i \gt 2$, $\lnot$("$S_i$" is true) <br />$S_3$ = there exists $i \gt 3$, $\lnot$("$S_i$" is true) <br /> $\vdots$||$G_1'$ = there exists $t \gt 1$, $\lnot G_t'$ <br /> $G_2'$ = there exists $t \gt 2$, $\lnot G_t'$ <br /> $G_3'$ = there exists $t \gt 3$, $\lnot G_t'$ <br /> $\vdots$
 
 We prove the paradoxicality of the Existential Yablo, and leave the Existential GR as an exercise for the reader.
 {{% proof %}}

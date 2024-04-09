@@ -1,0 +1,31 @@
+{{ if or .Params.math .Site.Params.math }}
+    {{ partial "math.html" . }}
+{{ end }}
+
+<!-- <script>
+    function changeGiscusTheme() {
+        const theme = document.body.classList.contains('dark') ? 'dark' : 'light';
+        console.log(theme)
+        function sendMessage(message) {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        console.log(iframe)
+        if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, window.URL);//'https://giscus.app');
+        }
+        sendMessage({
+            setConfig: {
+                theme: theme,
+            },
+        });
+    }
+    
+    console.log("here")
+    document.addEventListener('load', function () {
+        console.log("here")
+        const toggle = document.querySelector('.theme-toggle');
+        if (toggle) {
+            console.log("here")
+            toggle.addEventListener('click', changeGiscusTheme);
+        }
+    });
+</script> -->

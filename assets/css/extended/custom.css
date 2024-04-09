@@ -1,0 +1,60 @@
+/* Light theme and Dark theme */
+:root, .dark {
+    --primary-custom: rgb(226, 170, 101);
+    /* override link accent */
+    --link-color: rgb(226, 170, 101);
+    --link-hover-color: var(--link-color);
+    --link-underline-shadow: 0 1px 0 var(--link-color);
+    --link-hover-underline-color: var(--link-color);
+    --link-hover-underline-shadow: 0 2px 0 var(--link-hover-underline-color);
+}
+
+/* Dark theme */
+.dark {
+    --content: rgb(229, 229, 230); /* Text color */
+    --code-bg: rgb(57, 55, 51); /* ToC */
+    --link-background-color: #7459426d; /* ToC highlighted section */
+}
+
+.post-content blockquote {
+    border-inline-start: 3px solid var(--primary-custom);
+    /* background-color: rgba(245, 245, 245, 0.587); */
+    opacity: 0.9;
+    border-radius: 3px;
+}
+
+.post-content a {
+    box-shadow: 0 1px  rgb(255, 178, 84);
+}
+
+/* proof shortcode */
+.post-content .proof {
+    /* background-color: rgb(255, 250, 236); */
+    border-color: var(--primary-custom);
+    border-style: dashed;
+    border-left-style: solid;
+    border-right-style: solid;
+    /* border-top-style: solid;
+    border-bottom-style: solid; */
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-bottom: var(--content-gap);
+    overflow: auto; /* prevent qed from going outside of box */
+}
+
+.post-content .proof .qed {
+    float: right;
+    text-align: right;
+    padding-left: 0;
+    margin: 0;
+}
+
+.post-footer {
+    padding-bottom: 0;
+}
+
+.comments-separator {
+    height: 1px;
+    margin-bottom: var(--content-gap);
+}

@@ -1,7 +1,7 @@
 baseURL: https://allen-liaoo.github.io/alblog/
 languageCode: en-us
 title: Allen's Corner of the World
-theme: PaperMod
+theme: PaperModX
 enableGitInfo: true
 
 taxanomies:
