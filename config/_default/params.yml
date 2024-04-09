@@ -14,7 +14,7 @@ TocOpen: true
 ShowBreadCrumbs: true
 ShowCodeCopyButtons: true
 
-EnableInstantClick: true
+# EnableInstantClick: true
 
 # fuse.js search options
 fuseOpts:

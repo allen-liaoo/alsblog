@@ -1,5 +1,5 @@
 <div class="proof">
-    {{ "**Proof.**" | markdownify }}<br />
-    {{ .Inner | markdownify }} 
-    <p class="qed">□</p>
+    {{ "**Proof.**" | .Page.RenderString }}<br />
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+<div class="qed">□</div>
 </div>

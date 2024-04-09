@@ -1,5 +1,5 @@
 {{ if or .Params.math .Site.Params.math }}
-    {{ partial "math.html" . }}
+    {{ partialCached "math.html" . }}
 {{ end }}
 
 <!-- <script>
@@ -18,7 +18,7 @@
             },
         });
     }
-    
+
     console.log("here")
     document.addEventListener('load', function () {
         console.log("here")

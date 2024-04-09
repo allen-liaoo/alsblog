@@ -78,7 +78,7 @@ $S_1$ = there exists $i \gt 1$, $\lnot$("$S_i$" is true) <br /> $S_2$ = there ex
 
 We prove the paradoxicality of the Existential Yablo, and leave the Existential GR as an exercise for the reader.
 {{% proof %}}
-Suppose that for some arbitrary $k$, "$S_k$" is true. Then there exists $i > k$ such that $\lnot$("$S_i$" is true). By the T-Schema, $\lnot S_i$. So, there <u>does not</u> exist a $j > i$ such that $\lnot$("$S_j$" is true). So $S_{j+1}$ 
+Suppose that for some arbitrary $k$, "$S_k$" is true. Then there exists $i > k$ such that $\lnot$("$S_i$" is true). By the T-Schema, $\lnot S_i$. So there *does not* exist a $j > i$ such that $\lnot$("$S_j$" is true). So for all $j > i$, $S_{j+1}$ 
 {{% /proof %}}
 
 ### Relation to the Liar Paradoxes
