@@ -5,7 +5,7 @@ main:
     weight: 10
   - identifier: posts
     name: Posts
-    pageRef: /posts/
+    pageRef: page/posts.md
     weight: 20
   - identifier: tags
     name: Tags
@@ -13,5 +13,5 @@ main:
     weight: 30
   - identifier: search
     name: Search
-    pageRef: /search.md
+    pageRef: page/search.md
     weight: 40

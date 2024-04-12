@@ -2,10 +2,11 @@
 defaultTheme: auto
 # disableThemeToggle: true
 favicon: favicon.png
+appleTouchIcon: favicon.png
 
 # per post settings
 editPost:
-  URL: "https://github.com/allen-liaoo/alblog/tree/main/content"
+  URL: "https://github.com/allen-liaoo/alblog/tree/HEAD/content"
   Text: "View Source" # edit text
   appendFilePath: true # to append file path to Edit link
 comments: true
@@ -13,6 +14,7 @@ TocSide: left
 TocOpen: true
 ShowBreadCrumbs: true
 ShowCodeCopyButtons: true
+ShowReadingTime: true
 
 # EnableInstantClick: true
 

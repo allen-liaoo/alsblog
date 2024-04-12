@@ -1,5 +1,6 @@
+<!-- Wraps text inside a proof environment -->
 <div class="proof">
     {{ "**Proof.**" | .Page.RenderString }}<br />
-    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+    {{ .Inner }}
 <div class="qed">□</div>
 </div>

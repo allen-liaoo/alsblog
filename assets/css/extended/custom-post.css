@@ -1,0 +1,68 @@
+.entry-cover img {
+    object-fit: contain !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-height: 500px !important;
+    /* 400px !important; */
+}
+
+.post-content blockquote {
+    border-inline-start: 3px solid var(--primary-custom);
+    /* background-color: rgba(245, 245, 245, 0.587); */
+    opacity: 0.9;
+    border-radius: 3px;
+}
+
+.post-content a {
+    font-weight: normal;
+    box-shadow: 0 1px  rgb(255, 178, 84);
+}
+
+.footnotes a {
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+/* proof shortcode */
+.post-content .proof {
+    border-color: var(--primary-custom);
+    border-style: dashed;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-bottom: var(--content-gap);
+}
+
+/* Delete content gap space from last child to qed */
+.post-content .proof p:nth-last-child(2) {
+    margin-bottom: 0px;
+}
+
+.post-content .proof .qed {
+    font-size: 1em;
+    float: right;
+    padding-left: 0;
+    margin: 0;
+    line-height: 0%;
+    /* no line-height so it doesn't get forced into a new line, although it still does :( */
+}
+
+/* Add space to proof env to includ qed symbol */
+.post-content .proof::after {
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0.3em;
+}
+
+.post-footer {
+    padding-bottom: 0;
+}
+
+.comments-separator {
+    height: 1px;
+    margin-bottom: var(--content-gap);
+}

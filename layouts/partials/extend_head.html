@@ -1,7 +1,11 @@
+<!-- This file is auto-detected by PaperModX and injected into html header -->
+
+<!-- Load math -->
 {{ if or .Params.math .Site.Params.math }}
     {{ partialCached "math.html" . }}
 {{ end }}
 
+<!-- Not working -->
 <!-- <script>
     function changeGiscusTheme() {
         const theme = document.body.classList.contains('dark') ? 'dark' : 'light';

@@ -1,0 +1,6 @@
+<!-- Align a block by first string argument via css classes (margin); 
+    default to "center" -->
+{{ $centering := default "center" (.Get 0) }}
+<div class="{{ $centering }}">
+{{.Inner}}
+</div>    

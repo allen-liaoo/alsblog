@@ -17,6 +17,11 @@ goldmark:
         - - $
           - $
       enable: true
+  parser:
+    attribute:
+      block: true
+      title: true
+    wrapStandAloneImageWithinParagraph: false
 
 # code
 highlight:

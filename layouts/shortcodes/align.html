@@ -1,0 +1,6 @@
+<!-- Align text by first string argument; default to "center" -->
+<!-- Doesn't work if text is in some complicated markdown env (i.e. table) -->
+{{ $centering := default "center" (.Get 0) }}
+<div style="text-align: {{ $centering }};">
+{{ .Inner }}
+</div>    

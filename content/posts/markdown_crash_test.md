@@ -3,7 +3,7 @@ title: 'Markdown Crash Test'
 date: 2024-04-04T22:30:23-05:00
 type: post
 draft: true
-tags: ["test"]
+tags: ["testing"]
 ShowToc: true
 TocOpen: true
 ---
@@ -38,22 +38,6 @@ $$
 **You're working on a project featuring Markdown?**
 
 Drop [the source of this page](https://raw.githubusercontent.com/RoneoOrg/markdown/main/README.md) wherever you want to test *or showcase* the support of Markdown, and check that every single feature is properly rendered.
-
-
-**Table of Contents**
-
-- [Basic formatting](#basic-formatting)
-- [Blockquotes](#blockquotes)
-- [Lists](#lists)
-- [Linebreaks](#linebreaks)
-- [Links](#links)
-- [Code formatting](#code-formatting)
-- [Images](#images)
-- [Task lists](#task-lists)
-- [Tables](#tables)
-- [Footnotes](#footnotes)
-- [Definition List](#definition-list)
-- [Headings](#headings)
 
 
 ## Basic formatting
