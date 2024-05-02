@@ -5,7 +5,7 @@ main:
     weight: 10
   - identifier: posts
     name: Posts
-    pageRef: page/posts.md
+    pageRef: page/archives.md
     weight: 20
   - identifier: tags
     name: Tags

@@ -2,7 +2,6 @@
 title: 'Deductions in Hilbert Systems'
 date: 2024-04-30T19:51:40-05:00
 pubDate: 2024-05-02
-draft: false
 tags: ['logic', 'proof theory']
 ---
 

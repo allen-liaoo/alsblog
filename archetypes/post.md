@@ -1,8 +1,7 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 date: {{ .Date }}
-type: post
+pubDate: null
 draft: true
 tags: []
-ShowToc: true
 ---

@@ -1,5 +1,5 @@
 # theme params
-defaultTheme: auto
+defaultTheme: light
 # disableThemeToggle: true
 favicon: favicon.png
 appleTouchIcon: favicon.png
