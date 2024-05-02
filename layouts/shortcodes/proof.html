@@ -1,21 +1,31 @@
-<!-- Wraps text inside a proof environment -->
+<!-- Wraps text inside a proof environment
+     Proof type could be "proven" (default), "sketch", or "unproven" -->
 {{ $goal :=  "" }}
-{{ $proven := true }}
+{{ $type := "proven" }}
 
 {{ if .IsNamedParams }}
   {{ with (.Get "goal")}}{{ $goal = . }}{{end}}
-  {{ with (.Get "proven")}}{{ $proven = . }}{{end}}
+  {{ with (.Get "type")}}{{ $type = . }}{{end}}
 {{ else }}
   {{ with (.Get 0)}}{{ $goal = . }}{{end}}
-  {{ with (.Get 1)}}{{ $proven = . }}{{end}}
+  {{ with (.Get 1)}}{{ $type = . }}{{end}}
 {{ end }}
 
 <div class="proof">
-<i>Proof</i>{{ with $goal }}{{ printf " of %s" (markdownify .) }}{{end}}.<br />
+{{- if eq $type "sketch"}}
+  <i>Proof Sketch</i>
+{{- else if eq $type "unproven"}}
+  <i>Failed Proof</i>
+{{- else }}
+  <i>Proof</i>
+{{ end -}}
+{{ with $goal }}{{ printf " of %s" (markdownify .) }}{{end}}.<br />
 {{ .Inner }}
-{{ if eq $proven true}}
-<div class="qed" title="QED!">□</div>
-{{ else }}
-<div class="qed" title="Proven with caveats!">⧆</div>
-{{ end }}
+{{- if eq $type "sketch"}}
+  <div class="qed" title="Q.E.D.?">⧆</div>
+{{- else if eq $type "unproven" }}
+  <div class="qed" title="No Q.E.D.!">⊠</div>
+{{- else }}
+  <div class="qed" title="Q.E.D.!">□</div>
+{{ end -}}
 </div>

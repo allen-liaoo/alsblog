@@ -64,7 +64,7 @@ We prove that axioms 4, 5, and 6 are provable from 1 and 2.
 > **Contraction**: $(A \imp A \imp B) \imp (A \imp B)$
 
 Contraction seems easy to prove, as it fits the last part of Axiom 2 (Let $P$ be $A$, $Q$ be $A\imp B$, and $R$ be $B$). Once we see that, we almost have a proof:
-{{% proof "Axiom 4" "false" %}}
+{{% proof "Axiom 4" "sketch" %}}
 ||
 :--|-|:--
 1\. $(A \imp (A \imp B) \imp B) \imp (A \imp (A \imp B)) \imp (A \imp B)$ || Axiom 2
