@@ -5,7 +5,7 @@ draft: false
 tags: ['logic', 'proof theory']
 ---
 
-`x^2`Hilbert systems are systems of deduction based on a large set of axioms and a minimal set of inference rules. Since deductions in Hilbert systems can be very hard to come up with, I will discuss some tips and tricks that I learned when I tried to solve this problem in Troelstra's *Basic Proof Theory*:[^0]
+Hilbert systems are systems of deduction based on a large set of axioms and a minimal set of inference rules. Since deductions in Hilbert systems can be very hard to come up with, I will discuss some tips and tricks that I learned when I tried to solve this problem in Troelstra's *Basic Proof Theory*:[^0]
 
 [^0]: Exercise 2.4.2D
 
