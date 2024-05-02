@@ -1,8 +1,7 @@
 ---
-title: "Search" # in any language you want
+title: "Search"
 layout: "search" # necessary for search
-# url: "/archive"
-# description: "Description for Search"
-summary: "search page"
+summary: "Search this site"
 placeholder: "search this site..."
+hidden: true # hide from home page
 ---
