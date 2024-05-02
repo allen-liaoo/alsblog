@@ -2,7 +2,7 @@
 {{ $label :=  "" }}
 {{ $name :=  "" }}
 
-<!-- Get parameter (named or location) -->
+{{- /* Get parameter (named or location) */ -}}
 {{ if .IsNamedParams }}
   {{ with (.Get "type")}}{{ $type = . }}{{end}}
   {{ with (.Get "label")}}{{ $label = . }}{{ end }}
@@ -13,7 +13,7 @@
   {{ with (.Get 2)}}{{ $name = . }}{{end}}
 {{ end }}
 
-<!-- Calculate block title by its type -->
+{{- /* Calculate block title by its type */ -}}
 {{ $title := "Theorem" }}
 {{ if (hasPrefix "definition" (lower $type)) }}
   {{ $title = "Definition" }}
@@ -31,10 +31,10 @@
   {{ $title = strings.FirstUpper $type }}
 {{ end }}
 
-<!-- Set type to lowercase single character -->
+{{- /* Set type to lowercase single character */ -}}
 {{ $type = lower (substr $type 0 1) }}
 
-<!-- Set block label for linking -->
+{{- /* Set block label for linking */ -}}
 {{ .Page.Scratch.Add "count_thm" 1 }}
 {{ if and (eq $name "") (eq $label "")  }}
   {{ $label = printf "%d" (.Page.Scratch.Get "count_thm") }}
@@ -44,9 +44,9 @@
   {{ $label = printf "%s" $label | urlize }}
 {{ end }}
 
-<!-- Add:
+{{- /* Add:
   Map of theorem label -> number
-  Map of theorem label -> type -->
+  Map of theorem label -> type */ -}}
 {{ .Page.Scratch.SetInMap "thm-num-by-label" $label (.Page.Scratch.Get "count_thm") }}
 {{ .Page.Scratch.SetInMap "thm-type-by-label" $label $type }}
 {{ warnf "Page \"%s\" - Found theorem \"%s\" (#%d)"

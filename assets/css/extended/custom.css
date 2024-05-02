@@ -39,6 +39,7 @@
 .mintable th,
 .mintable td {
     border: none !important;
+    padding: 0.3em !important;
 }
 
 .highlight-block {

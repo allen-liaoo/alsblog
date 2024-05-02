@@ -1,6 +1,7 @@
 ---
 title: 'Deductions in Hilbert Systems'
 date: 2024-04-30T19:51:40-05:00
+pubDate: 2024-05-02
 draft: false
 tags: ['logic', 'proof theory']
 ---
@@ -18,19 +19,19 @@ Hilbert systems are systems of deduction based on a large set of axioms and a mi
 > 
 > 3. $A \imp (B \imp A)$ (identical to 1)
 > 4. $(A \imp A \imp B) \imp (A \imp B)$ (Contraction)
-> 5. $(A \imp B) \imp (C \imp A) \imp (C \imp B)$ (Pseudo-Transitivity)
-> 6. $(A \imp B \imp C) \imp (B \imp A \imp C)$ (Permutation)[^2]
+> 5. $(A \imp B) \imp (C \imp A) \imp (C \imp B)$ (Pseudo-Transitivity)[^2]
+> 6. $(A \imp B \imp C) \imp (B \imp A \imp C)$ (Permutation)
 > 
 > The only inference rules available are [Modus Ponens](https://en.wikipedia.org/wiki/Modus_ponens) (MP; also called $\imp$-Elimination).[^3]
 
-[^1]: These are the axioms for the $\rightarrow$ fragment of minimal logic (hence also intuitionist or classical).
-[^2]: Given axiom 5 and 6, we can straightforwardly derive the transitivity axiom, which is just axiom 5 with the order of its antecedent flipped: $(C \imp A) \imp (A \imp B) \imp (C \imp B)$.
-[^3]: We will treat the axioms as axiom schemas, where $P,Q,R,A,B,C$ are schematic variables in the metalanguage. Equivalently, we can also treat them as axioms with propositional variables, and use the uniform substitution rule. So, for example, substituting $A$ for $P$ and $A \imp B$ for $Q$ in Axiom 1, we get $A \imp ((A \imp B) \imp A)$.
+[^1]: These are the axioms for the $\imp$ fragment of minimal logic (hence also intuitionist or classical).
+[^2]: We call this Pseudo-Transitivity (of $\imp$) because transitivity is just axiom 5 with the order of its antecedents flipped: $(C \imp A) \imp (A \imp B) \imp (C \imp B)$. Provided that we also have axiom 6 (permutation), we can straightforwardly derive the transitivity axiom.
+[^3]: We will treat the axioms as axiom schemas, where $P,Q,R,A,B,C$ are schematic variables in the metalanguage. Equivalently, we can also treat them as axioms with propositional variables, and use the uniform substitution rule. So, for example, substituting $A$ for $P$ and $A \imp B$ for $Q$ in axiom 1, we get $A \imp ((A \imp B) \imp A)$.
 
 Note that here, we use the convention that $\imp$ is right associative, meaning
 > $A \imp B \imp C \equiv (A \imp (B \imp C))$
 
-We may drop or add parenthesis so long that it does not make it ambiguous and change the structure of the formulas. For a conditional of the form $\phi \imp (\psi \imp \chi)$, we say that the (first and second) **antecedents** are $\phi$ and $\psi$, and the **consequent** is $\chi$.
+We may drop or add parenthesis so long that it does not change the structure of the formulas. For a conditional of the form $\phi \imp (\psi \imp \chi)$, we say that the (first and second) **antecedents** are $\phi$ and $\psi$, and the **consequent** is $\chi$.
 
 Author's Note: As I was finishing up this post, I realized that axiom 5 and 6 have already been proved [on Wikipedia](https://en.wikipedia.org/wiki/Hilbert_system#Some_useful_theorems_and_their_proofs). But the proof of axiom 6 utilizes the hypothetical syllogism metatheorem, whereas [our proof of axiom 6](#permutation-proof) will not have this dependency.
 
@@ -38,8 +39,8 @@ Author's Note: As I was finishing up this post, I realized that axiom 5 and 6 ha
 For practice, consider proving $A \imp A$ (the principle of identity) in the first system. How do we approach this? 
 
 We start by fitting the formula into the last part of the axioms. We have two options:  
-Try Axiom 1: $(A \imp A) \imp\ ?\ \imp (A \imp A)$  
-or Axiom 2: $(A \imp\ ?\ \imp A) \imp\ (A \imp\ ?\ ) \imp (A \imp A)$
+Try axiom 1: $(A \imp A) \imp\ ?\ \imp (A \imp A)$  
+or axiom 2: $(A \imp\ ?\ \imp A) \imp\ (A \imp\ ?\ ) \imp (A \imp A)$
 
 Axiom 1 isn't usually useful, because if we want to use Modus Ponens to get the final consequent, we must apply the antecedents in order, but its first antecedent is precisely what we want to prove!
 
@@ -63,7 +64,7 @@ We prove that axioms 4, 5, and 6 are provable from 1 and 2.
 #### Contraction (Axiom 4)
 > **Contraction**: $(A \imp A \imp B) \imp (A \imp B)$
 
-Contraction seems easy to prove, as it fits the last part of Axiom 2 (Let $P$ be $A$, $Q$ be $A\imp B$, and $R$ be $B$). Once we see that, we almost have a proof:
+Contraction seems easy to prove, as it fits the last part of axiom 2 (Let $P$ be $A$, $Q$ be $A\imp B$, and $R$ be $B$). Once we see that, we almost have a proof:
 {{% proof "Axiom 4" "sketch" %}}
 ||
 :--|-|:--
@@ -73,7 +74,7 @@ Contraction seems easy to prove, as it fits the last part of Axiom 2 (Let $P$ be
 {.mintable}
 {{% /proof %}}
 
-We know we are on the right track because $A \imp (A \imp B) \imp B$ looks provable——it is just a disguised form of Modus Ponens! 
+But we need to fill in the rule at line 2. We know we are on the right track because $A \imp (A \imp B) \imp B$ looks provable——it is just a conditional form of Modus Ponens! 
 {{% proof "$A \imp ((A \imp B) \imp B)$" %}}
 ||
 :--|-|:--
@@ -87,12 +88,12 @@ We know we are on the right track because $A \imp (A \imp B) \imp B$ looks prova
 { .mintable }
 {{% /proof %}}
 
-In the first line, we fit $(A\imp B)\imp B$ into Axiom 2. This may seem weird, because the first $A$ of $A \imp ((A \imp B) \imp B)$ is not part of its consequent, but it works out if we have proven Axiom 5 already (line 5). We will do that now.
+We start the proof by observing that $(A\imp B)\imp B$ fits the consequent of axiom 2. This may seem weird, because the first $A$ of $A \imp ((A \imp B) \imp B)$ is not part of the instantiated axiom, but it works out if we have proven axiom 5 already (line 5). We will do that now.
 
 #### Pseudo-Transitivity (Axiom 5)
 > **Pseudo-Transitivity**: $(A \imp B) \imp (C \imp A) \imp (C \imp B)$
 
-Plugging this in to Axiom 2, we have (Let $P$ be $A \imp B$ and $R$ be the rest):  
+Plugging this in to axiom 2, we have (Let $P$ be $A \imp B$ and $R$ be the rest):  
 $((A \imp B) \imp\ ?\ \imp ((C \imp A) \imp (C \imp B)))$ $\imp ((A \imp B) \imp\ ?\ )$ $\imp ((A \imp B) \imp ((C \imp A) \imp (C \imp B)))$
 
 When thinking about what to substitute in for the question mark, we need a crucial trick:[^4]
@@ -101,7 +102,7 @@ When thinking about what to substitute in for the question mark, we need a cruci
 
 So let $?$ be $(C \imp A \imp B)$. Then the first antecedent becomes:  
 $((A \imp B) \imp\ (C \imp A \imp B) \imp ((C \imp A) \imp (C \imp B)))$  
-This is provable because $(C \imp A \imp B) \imp ((C \imp A) \imp (C \imp B))$ is a theorem; it's just Axiom 2! The second antecedent becomes an instance of Axiom 1:
+Since $(C \imp A \imp B) \imp ((C \imp A) \imp (C \imp B))$ is a theorem (axiom 2), the first antecedent is provable after an application of *VC*. The second antecedent becomes an instance of axiom 1:
 $(A \imp B) \imp  (C \imp A \imp B)$
 
 Here's the full proof:
@@ -121,10 +122,10 @@ Here's the full proof:
 #### Permutation (Axiom 6) {#permutation-proof}
 > **Permutation**: $(A \imp B \imp C) \imp (B \imp A \imp C)$
 
-It is obvious that we should use Axiom 2:  
+It is obvious that we should use axiom 2:  
 $((A \imp B \imp C) \imp\ ? \ \imp (B \imp A \imp C))$ $\imp ((A \imp B \imp C) \imp\ ? \ )$ $\imp (A \imp B \imp C) \imp (B \imp A \imp C)$
 
-Here, we will substitute something for $?$ that is not obvious at first: $(B \imp A \imp B)$. Why? Consider the two antecedents:  
+We will substitute $?$ with $(B \imp A \imp B)$. Why? Consider the two antecedents:  
 $(A \imp B \imp C) \imp (B \imp A \imp B) \imp (B \imp A \imp C)$  
 $(A \imp B \imp C) \imp (B \imp A \imp B)$  
 We can straightforwardly prove the second antecedent by the *VC* rule, because $(B \imp A \imp B)$ is already a theorem. What about the first antecedent? Notice that the following two formulas are instantiations of axiom 5 (which we have already proved) and axiom 2, respectively:  
@@ -151,17 +152,17 @@ Note that I have omitted a few steps by using Pseudo-Transitivity (axiom 5) as a
 
 ### Proving System A from System B
 We prove that axiom 2 is derivable from axiom 3~6. This direction of the proof is relatively easier because we have more axioms to work with. First, let us first prove this derived rule:
-> **Transitivity\***: Given $A \imp B \imp C$ and $C \imp D$, we can derive $A \imp B \imp D$
+> **Transitivity\***: Given $P \imp Q \imp R$ and $R \imp D$, we can derive $P \imp Q \imp D$
 {{% proof "Transitivity\*" %}}
 |||
 |:--|-|:--|
-1\. $A \imp B \imp C$||Premise
-2\. $C \imp D$||Premise
-3\. $((B \imp C) \imp (B \imp D)) \imp (A \imp B \imp C) \imp (A \imp B \imp D)$||Axiom 5
-4\. $(C \imp D) \imp (B \imp D) \imp (B \imp D)$||Axiom 3
-5\. $(B \imp D) \imp (B \imp D)$||MP (2,4)
-6\. $(A \imp B \imp C) \imp (A \imp B \imp D)$||MP (3,5)
-7\. $(A \imp B \imp D)$||MP (1,6)
+1\. $P \imp Q \imp R$||Premise
+2\. $R \imp D$||Premise
+3\. $((Q \imp R) \imp (Q \imp D))$ $\imp (P \imp Q \imp R)$ $\imp (P \imp Q \imp D)$||Axiom 5 ($C \equiv P$)
+4\. $(R \imp D) \imp (Q \imp R) \imp (Q \imp D)$||Axiom 5 ($C \equiv Q$)
+5\. $(Q \imp D) \imp (Q \imp D)$||MP (2,4)
+6\. $(P \imp Q \imp R) \imp (P \imp Q \imp D)$||MP (3,5)
+7\. $(P \imp Q \imp D)$||MP (1,6)
 { .mintable }
 {{% /proof %}}
 
@@ -169,8 +170,8 @@ Now that we have this rule under our belt, we can prove axiom 2 from 3~6. Let $\
 {{% proof %}}
 |||
 |:--|-|:--|
-1\. $\psi \imp ((P \imp Q \imp R) \imp (Q \imp P \imp R))$ $\imp ((P \imp Q \imp R) \imp (P \imp Q) \imp (P \imp R))$||Axiom 5
-2\. $(Q \imp (P \imp R)) \imp (P \imp Q) \imp (P \imp (P \imp R))$||Axiom 5
+1\. $\psi \imp ((P \imp Q \imp R) \imp (Q \imp P \imp R))$ $\imp ((P \imp Q \imp R) \imp (P \imp Q) \imp (P \imp R))$||Axiom 5 ($A \equiv (Q \imp P \imp R),$ $C \equiv (P \imp Q \imp R)$)
+2\. $(Q \imp (P \imp R)) \imp (P \imp Q) \imp (P \imp (P \imp R))$||Axiom 5 ($C \equiv P$)
 3\. $(P \imp (P \imp R)) \imp (P \imp R)$||Axiom 4
 4\. $\psi$||Transitivity\* (2,3)
 5\. $((P \imp Q \imp R) \imp (Q \imp P \imp R))$ $\imp ((P \imp Q \imp R) \imp (P \imp Q) \imp (P \imp R))$||MP (1,4)
@@ -179,7 +180,7 @@ Now that we have this rule under our belt, we can prove axiom 2 from 3~6. Let $\
 { .mintable }
 {{% /proof %}}
 
-The first step has Axiom 2 as its consequent, and its second antecedent is a straighforward application of the permutation axiom. The first consequent took more work to prove; it required recognizing that the second step is possible from Axiom 5, and that we can utilize Contraction and Transitivity\*.
+The first step has axiom 2 as its consequent, and its second antecedent is a straighforward application of the permutation axiom. The first consequent took more work to prove; it required recognizing that the second step is possible from axiom 5, and that we can utilize Contraction and Transitivity\*.
 
 ### Lessons
 To sum it up, we showed that the usual first step is to find an axiom whose consequent fits the goal, then consider filling in the $?$ in a way that makes each antecedent provable. In the case where an antecedent is not straightforwardly provable, we also utilizes other tricks like *VC*, (pseudo-)transitivity, and other already-proven axioms. The order of proving axioms is important; we had to recognize that we need axiom 5 to prove axiom 4 and 6, and whenever we search for axioms to fit the goal, we want to include the ones we have already proven.

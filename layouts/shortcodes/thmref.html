@@ -1,7 +1,7 @@
-<!-- Label (must be a string):
+{{- /* Label (must be a string):
     If theorem was unlabeled and unnamed, then it can only be referred to by its number.
     If theorem was unlabeled but named, then it can only be referred to by its name.
-    If theorem was labeled, then it can only be referred to by its label. -->
+    If theorem was labeled, then it can only be referred to by its label. */ -}}
 {{ $label := "" }}
 
 {{ if .IsNamedParams }}
@@ -13,7 +13,7 @@
 {{ $number := (index (.Page.Scratch.Get "thm-num-by-label") $label) }}
 {{ $type := (index (.Page.Scratch.Get "thm-type-by-label") $label) }}
 
-<!-- Calculate title by its type -->
+{{- /* Calculate title by its type */ -}}
 {{ $title := "Theorem" }}
 {{ if (hasPrefix "definition" $type) }}
   {{ $title = "Definition" }}
