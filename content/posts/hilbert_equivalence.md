@@ -53,7 +53,7 @@ So, let's go with axiom 2. What should we substitute in for the question mark? I
 3\. $(A \imp (A \imp A)) \imp (A \imp A)$ | | MP (1, 2)
 4\. $A \imp (A \imp A)$ | |  Axiom 1 ($P,Q \equiv a$)
 5\. $A \imp A$ | | MP (3, 4)
-{ .mintable }
+{ .prooftable }
 {{% /proof %}}
 
 We are now ready to tackle the problem presented earlier. Although there is a solution in the book, it utilizes the fact that the first system was proved to be equivalent a Natural Deduction system. Here, we present a more direct proof by deriving each axiom from the other system.
@@ -71,7 +71,7 @@ Contraction seems easy to prove, as it fits the last part of axiom 2 (Let $P$ be
 1\. $(A \imp (A \imp B) \imp B) \imp (A \imp (A \imp B)) \imp (A \imp B)$ || Axiom 2
 2\. $A \imp (A \imp B) \imp B$ || ??
 3\. $(A \imp (A \imp B)) \imp (A \imp B)$ || MP (1,2)
-{.mintable}
+{.prooftable}
 {{% /proof %}}
 
 But we need to fill in the rule at line 2. We know we are on the right track because $A \imp (A \imp B) \imp B$ looks provable——it is just a conditional form of Modus Ponens! 
@@ -85,7 +85,7 @@ But we need to fill in the rule at line 2. We know we are on the right track bec
 5\. $((A \imp B) \imp A) \imp ((A \imp B) \imp B)$ $\imp (A \imp ((A \imp B) \imp A))$ $\imp (A \imp ((A \imp B) \imp B))$ || Axiom 5!!
 6\. $(A \imp ((A \imp B) \imp A))$ $\imp (A \imp ((A \imp B) \imp B))$ || MP (3,5)
 6\. $A \imp ((A \imp B) \imp B)$ || MP (4,6)
-{ .mintable }
+{ .prooftable }
 {{% /proof %}}
 
 We start the proof by observing that $(A\imp B)\imp B$ fits the consequent of axiom 2. This may seem weird, because the first $A$ of $A \imp ((A \imp B) \imp B)$ is not part of the instantiated axiom, but it works out if we have proven axiom 5 already (line 5). We will do that now.
@@ -116,7 +116,7 @@ Here's the full proof:
 4\. $((A \imp B) \imp (C \imp A \imp B))$ $\imp ((A \imp B) \imp ((C \imp A) \imp (C \imp B)))$ || MP (1,3)
 5\. $(A \imp B) \imp (C \imp A \imp B)$ || Axiom 1
 6\. $(A \imp B) \imp ((C \imp A) \imp (C \imp B))$ || MP (4,5)
-{ .mintable }
+{ .prooftable }
 {{% /proof %}}
 
 #### Permutation (Axiom 6) {#permutation-proof}
@@ -145,7 +145,7 @@ Let $\phi$ be $(B \imp A \imp B) \imp (B \imp A \imp C)$.
 6\. $B \imp A \imp B$||Axiom 1
 7\. $(A \imp B \imp C) \imp (B \imp A \imp B)$||VC (6)
 8\. $(A \imp B \imp C) \imp (B \imp A \imp C)$||MP (5,7)
-{.mintable}
+{.prooftable}
 {{% /proof %}}
 
 Note that I have omitted a few steps by using Pseudo-Transitivity (axiom 5) as a derived rule.
@@ -163,7 +163,7 @@ We prove that axiom 2 is derivable from axiom 3~6. This direction of the proof i
 5\. $(Q \imp D) \imp (Q \imp D)$||MP (2,4)
 6\. $(P \imp Q \imp R) \imp (P \imp Q \imp D)$||MP (3,5)
 7\. $(P \imp Q \imp D)$||MP (1,6)
-{ .mintable }
+{ .prooftable }
 {{% /proof %}}
 
 Now that we have this rule under our belt, we can prove axiom 2 from 3~6. Let $\psi$ be $(Q \imp P \imp R) \imp (P \imp Q) \imp (P \imp R)$. 
@@ -177,7 +177,7 @@ Now that we have this rule under our belt, we can prove axiom 2 from 3~6. Let $\
 5\. $((P \imp Q \imp R) \imp (Q \imp P \imp R))$ $\imp ((P \imp Q \imp R) \imp (P \imp Q) \imp (P \imp R))$||MP (1,4)
 6\. $(P \imp Q \imp R) \imp (Q \imp P \imp R)$||Axiom 6
 7\. $(P \imp Q \imp R) \imp (P \imp Q) \imp (P \imp R)$||MP (5,6)
-{ .mintable }
+{ .prooftable }
 {{% /proof %}}
 
 The first step has axiom 2 as its consequent, and its second antecedent is a straighforward application of the permutation axiom. The first consequent took more work to prove; it required recognizing that the second step is possible from axiom 5, and that we can utilize Contraction and Transitivity\*.
