@@ -1,6 +1,21 @@
 <!-- Wraps text inside a proof environment -->
+{{ $goal :=  "" }}
+{{ $proven := true }}
+
+{{ if .IsNamedParams }}
+  {{ with (.Get "goal")}}{{ $goal = . }}{{end}}
+  {{ with (.Get "proven")}}{{ $proven = . }}{{end}}
+{{ else }}
+  {{ with (.Get 0)}}{{ $goal = . }}{{end}}
+  {{ with (.Get 1)}}{{ $proven = . }}{{end}}
+{{ end }}
+
 <div class="proof">
-    {{ "**Proof.**" | .Page.RenderString }}<br />
-    {{ .Inner }}
-<div class="qed">□</div>
+<i>Proof</i>{{ with $goal }}{{ printf " of %s" (markdownify .) }}{{end}}.<br />
+{{ .Inner }}
+{{ if eq $proven true}}
+<div class="qed" title="QED!">□</div>
+{{ else }}
+<div class="qed" title="Proven with caveats!">⧆</div>
+{{ end }}
 </div>

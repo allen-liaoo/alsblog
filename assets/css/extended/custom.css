@@ -1,6 +1,8 @@
 /* Light theme and Dark theme */
 :root, .dark {
     --primary-custom: rgb(226, 170, 101);
+    --highlight-background: rgba(245, 245, 245, 0.587);
+    /* theme vars */
     /* override link accent */
     --link-color: rgb(226, 170, 101);
     --link-hover-color: var(--link-color);
@@ -12,8 +14,43 @@
 
 /* Dark theme */
 .dark {
+    --highlight-background: rgb(42, 42, 43);
+    /* theme vars */
     --content: rgb(229, 229, 230); /* Text color */
     --code-bg: rgb(57, 55, 51); /* ToC */
     --link-background-color: #7459426d; 
     /* ToC highlighted section */
+}
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+/* mintable has no table header, row border, and margin-bottom
+   used for line by line proofs */
+.mintable {
+    margin-bottom: 0 !important;
+}
+
+.mintable thead {
+    display: none;
+}
+
+.mintable th,
+.mintable td {
+    border: none !important;
+}
+
+.highlight-block {
+    border-color: var(--primary-custom);
+    border-style: dashed;
+    border-width: 2px;
+    border-radius: 5px;
+    border-inline-start: 3px solid var(--primary-custom);
+    /* border-left-style: solid;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-right-style: solid; */
+    padding: 0.5em;
+    margin-bottom: var(--content-gap);
 }

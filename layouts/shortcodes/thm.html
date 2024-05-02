@@ -1,0 +1,61 @@
+{{ $type := "t" }}
+{{ $label :=  "" }}
+{{ $name :=  "" }}
+
+<!-- Get parameter (named or location) -->
+{{ if .IsNamedParams }}
+  {{ with (.Get "type")}}{{ $type = . }}{{end}}
+  {{ with (.Get "label")}}{{ $label = . }}{{ end }}
+  {{ with (.Get "name")}}{{ $name = . }}{{end}}
+{{ else }}
+  {{ $type = .Get 0 }}
+  {{ with (.Get 1)}}{{ $label = . }}{{ end }}
+  {{ with (.Get 2)}}{{ $name = . }}{{end}}
+{{ end }}
+
+<!-- Calculate block title by its type -->
+{{ $title := "Theorem" }}
+{{ if (hasPrefix "definition" (lower $type)) }}
+  {{ $title = "Definition" }}
+{{ else if (hasPrefix "proposition" (lower $type)) }}
+  {{ $title = "Proposition" }}
+{{ else if (hasPrefix "lemma" (lower $type)) }}
+  {{ $title = "Lemma" }}
+{{ else if (hasPrefix "corollary" (lower $type)) }}
+  {{ $title = "Corollary" }}
+{{ else if (hasPrefix "fact" (lower $type)) }}
+  {{ $title = "Fact" }}
+{{ else if (hasPrefix "remark" (lower $type)) }}
+  {{ $title = "Remark" }}
+{{ else }}
+  {{ $title = strings.FirstUpper $type }}
+{{ end }}
+
+<!-- Set type to lowercase single character -->
+{{ $type = lower (substr $type 0 1) }}
+
+<!-- Set block label for linking -->
+{{ .Page.Scratch.Add "count_thm" 1 }}
+{{ if and (eq $name "") (eq $label "")  }}
+  {{ $label = printf "%d" (.Page.Scratch.Get "count_thm") }}
+{{ else if eq $label "" }}
+  {{ $label = printf "%s" $name | urlize }}
+{{ else }}
+  {{ $label = printf "%s" $label | urlize }}
+{{ end }}
+
+<!-- Add:
+  Map of theorem label -> number
+  Map of theorem label -> type -->
+{{ .Page.Scratch.SetInMap "thm-num-by-label" $label (.Page.Scratch.Get "count_thm") }}
+{{ .Page.Scratch.SetInMap "thm-type-by-label" $label $type }}
+{{ warnf "Page \"%s\" - Found theorem \"%s\" (#%d)"
+    (.Page.Name)
+    $label
+    (index (.Page.Scratch.Get "thm-num-by-label") $label) }}
+
+<div id="{{ $label }}" class="thm highlight-block">
+    <p class="thm-title thm-{{ $type }}">
+      <b style="font-weight: bold !important;">{{ $title }}.</b> {{ $name }}</p>
+    {{ .Inner }}
+</div>

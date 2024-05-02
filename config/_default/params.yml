@@ -11,6 +11,7 @@ editPost:
   appendFilePath: true # to append file path to Edit link
 comments: true
 TocSide: left
+showToc: true
 TocOpen: true
 ShowBreadCrumbs: true
 ShowCodeCopyButtons: true

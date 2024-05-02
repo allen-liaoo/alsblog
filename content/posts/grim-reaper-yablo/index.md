@@ -1,10 +1,8 @@
 ---
 title: 'The Grim Reaper Paradox is the Yablo Paradox'
 date: 2024-04-07T21:11:13-05:00
-type: post
 draft: true
 tags: ['logic', 'paradox']
-ShowToc: true
 cover:
   image: infinite-regress.jpg
   relative: true
@@ -41,7 +39,7 @@ Each sentence on the list contains `... is true`, which is what's called the *tr
 > **T-Schema**: $\phi\leftrightarrow$ ("$\phi$" is true)  
 
 The T-Schema allow us to go from saying a sentence is true to "asserting" that sentence. With it, we can now prove a contradiction:
-{{% proof %}}
+{{% proof "Yablo Paradox" %}}
 Consider some arbitrary $k$, suppose that "$S_k$" is true, then, by the T-Schema, $S_k$. So, for any $i \gt k$, "$S_k$" is not true. Then "$S_{k+1}$" is not true.  Similarly, for any $j \gt {k+1}$, "$S_{j}$" is not true. So $S_{k+1}$, and by the T-Schema, "$S_{k+1}$" is true! Contradiction.  
 So $S_k$ is not true. Because $k$ was chosen arbitrarily, we have proven that for any $k$, "$S_k$" is not true.[^3] So for any $l \gt 2$, "$S_l$" is not true. So "$S_1$" is true. But we just proved that all sentences on the list is not true, including $S_1$! Contradiction again.
 [^3]: Here we have omitted an important technical detail, which is that for this generalization to work, we are assuming that our model contains only the standard numbers. In effect, we have employed something like the [$\omega$-rule](https://en.wikipedia.org/wiki/%CE%A9-consistent_theory?oldformat=true#%CF%89-logic). For an extended discussion of this and the Yablo paradox in general, see Roy Cook's [The Yablo Paradox: An Essay on Circularity](https://www.goodreads.com/book/show/22104293-the-yablo-paradox).
@@ -59,7 +57,7 @@ This is not similar enough to the Yablo paradox yet. Each of $G_t'$ is distinct 
 
 How do we use this to derive a contradiction? Exactly the same way we derived a contradiction in the [Yablo paradox](#yablo-paradox)! In case you're not convinced, here is the proof:
 
-{{% proof a %}}
+{{% proof "GM Paradox" %}}
 Consider some arbitrary $k$, suppose that $G_k$, then, by the G-Schema, $G_k'$. So, for any $t \gt k$, $\lnot G_t$. Then $\lnot G_{k+1}$.  Similarly, for any $s \gt {k+1}$, $\lnot G_{s}$. So $G_{k+1}'$, and by the G-Schema, $\lnot G_{k_1}'$! Contradiction.  
 So, $\lnot G_k$. Because $k$ was chosen arbitrarily, we have proven that for any $k$, $\lnot G_k$.[^3] By the G-Schema, for any $k$, $\lnot G_k'$. But it also entails that for any $l \gt 2$, $\lnot G_l$. Hence, $G_1'$. But we just proved that all sentences on the list is not true, including $G_1'$! Contradiction again.
 {{% /proof %}}
@@ -86,7 +84,7 @@ If we flip the "for all" in each sentence into "there exists", we get an existen
 {{% /alignfig %}}
 
 We prove the paradoxicality of the Existential Yablo, and leave the Existential GR as an exercise for the reader.
-{{% proof %}}
+{{% proof "Existential Yablo Paradox" %}}
 Suppose that for some arbitrary $k$, "$S_k$" is true. Then there exists $i > k$ such that $\lnot$("$S_i$" is true). By the T-Schema, $\lnot S_i$. So there *does not* exist a $j > i$ such that $\lnot$("$S_j$" is true). So for all $j > i$, "$S_{j+1}$" is true. So $S_{i+1}$ is true, and hence $S_{i+1}$. Then there exists $k > i+1 > i$ such that $\lnot$("$S_k$" is true). Contradiction.  
 So it is not the case that "$S_k$" is true. Hence, for any $k$, $\lnot$("$S_k$" is true).[^3] Then $\lnot S_1$. So there *does not exist* $i \gt 1$ such that $\lnot$("$S_i$" is true). So $S_2$, and hence there exists $j > 2$ such that $\lnot$("$S_j$" is true). Contradiction.
 {{% /proof %}}
