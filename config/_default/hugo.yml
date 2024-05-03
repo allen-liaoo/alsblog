@@ -1,4 +1,4 @@
-# baseURL: 
+baseURL: https://alsblog.netlify.app/
 languageCode: en-us
 title: Allen's Corner of the World
 description: ∀p, if Allen said \"p\", then \"p\" is true
@@ -6,6 +6,10 @@ keywords: [Blog, Logic, Philosophy, Programming]
 author: Me
 theme: PaperModX
 enableGitInfo: true
+
+# when building, post's url is:
+permalinks:
+  posts: /:section/:year/:month/:title/
 
 taxanomies:
   tags: tags
