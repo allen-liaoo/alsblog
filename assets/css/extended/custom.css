@@ -22,13 +22,19 @@
     /* ToC highlighted section */
 }
 
+/* Go to top button */
+.top-link {
+    bottom: 30px;
+    right: 30px;
+}
+
 .no-margin-bottom {
     margin-bottom: 0 !important;
 }
 
 /* prooftable has no table header, row border, and margin-bottom
    used for line by line proofs */
-.prooftable {
+   .prooftable {
     margin-bottom: 0 !important;
 }
 
