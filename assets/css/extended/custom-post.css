@@ -16,7 +16,7 @@
 
 .post-content a {
     font-weight: normal;
-    box-shadow: 0 1px  rgb(255, 178, 84);
+    box-shadow: 0 1px var(--primary-custom);
 }
 
 .footnotes a {
