@@ -7,7 +7,7 @@ author: Me
 theme: PaperModX
 enableGitInfo: true
 
-# when building, post's url is:
+# when building, post's url is, i.e. post/2024/02/post-title
 permalinks:
   posts: /:section/:year/:month/:title/
 

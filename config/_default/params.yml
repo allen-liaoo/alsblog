@@ -6,7 +6,7 @@ appleTouchIcon: favicon.png
 
 # per post settings
 editPost:
-  URL: "https://github.com/allen-liaoo/alblog/tree/HEAD/content"
+  URL: "https://github.com/allen-liaoo/alsblog/tree/HEAD/content"
   Text: "View Source" # edit text
   appendFilePath: true # to append file path to Edit link
 comments: true
@@ -23,7 +23,8 @@ ShowReadingTime: true
 fuseOpts:
   shouldSort: true
   includeMatches: true
-  threshold: 0.5
+  threshold: 0.4 # fuzzy match
+  ignoreLocation: true # search anywhere in below sections
   keys: ["title", "permalink", "summary", "content"]
 
 assets:
