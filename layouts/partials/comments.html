@@ -8,10 +8,11 @@
 function getGiscusTheme() {
     const theme = localStorage.getItem("pref-theme") // set by PaperModX
     switch (theme) {
+        // NOTE: Must allow CORS of "https://giscus.app" for custom theme to work
         case 'light':
-            return window.location.origin+'/giscus-light1.css' // github light
+            return window.location.origin+'/giscus-light.css' // custom light theme
         case 'dark': 
-            return window.location.origin+'/giscus-light.css' // github Dark Tritanopia
+            return window.location.origin+'/giscus-dark.css' // custom dark theme
         default: 
             return 'preferred_color_scheme' // giscus detects
     }
