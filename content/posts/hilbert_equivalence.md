@@ -32,7 +32,9 @@ Note that here, we use the convention that $\imp$ is right associative, meaning
 
 We may drop or add parenthesis so long that it does not change the structure of the formulas. For a conditional of the form $\phi \imp (\psi \imp \chi)$, we say that the (first and second) **antecedents** are $\phi$ and $\psi$, and the **consequent** is $\chi$.
 
-Author's Note: As I was finishing up this post, I realized that axiom 5 and 6 have already been proved [on Wikipedia](https://en.wikipedia.org/wiki/Hilbert_system#Some_useful_theorems_and_their_proofs). But the proof of axiom 6 utilizes the hypothetical syllogism metatheorem, whereas [our proof of axiom 6](#permutation-proof) will not have this dependency.
+{{% accordion "Author's Note" false %}}
+As I was finishing up this post, I realized that axiom 5 and 6 have already been proved [on Wikipedia](https://en.wikipedia.org/wiki/Hilbert_system#Some_useful_theorems_and_their_proofs). But the proof of axiom 6 utilizes the hypothetical syllogism metatheorem, whereas [our proof of axiom 6](#permutation-proof) will not have this dependency.
+{{% /accordion %}}
 
 #### Proving Principle of Identity
 For practice, consider proving $A \imp A$ (the principle of identity) in the first system. How do we approach this? 
@@ -150,7 +152,7 @@ Let $\phi$ be $(B \imp A \imp B) \imp (B \imp A \imp C)$.
 Note that I have omitted a few steps by using Pseudo-Transitivity (axiom 5) as a derived rule.
 
 ### Proving System A from System B
-We prove that axiom 2 is derivable from axiom 3~6. This direction of the proof is relatively easier because we have more axioms to work with. First, let us first prove this derived rule:
+We prove that axiom 2 is derivable from axiom 4~6. This direction of the proof is relatively easier because we have more axioms to work with. First, let us first prove this derived rule:
 > **Transitivity\***: Given $P \imp Q \imp R$ and $R \imp D$, we can derive $P \imp Q \imp D$
 {{% proof "Transitivity\*" %}}
 |||
@@ -165,7 +167,7 @@ We prove that axiom 2 is derivable from axiom 3~6. This direction of the proof i
 { .prooftable }
 {{% /proof %}}
 
-Now that we have this rule under our belt, we can prove axiom 2 from 3~6. Let $\psi$ be $(Q \imp P \imp R) \imp (P \imp Q) \imp (P \imp R)$. 
+Now that we have this rule under our belt, we can prove axiom 2. Let $\psi$ be $(Q \imp P \imp R) \imp (P \imp Q) \imp (P \imp R)$. 
 {{% proof %}}
 |||
 |:--|-|:--|

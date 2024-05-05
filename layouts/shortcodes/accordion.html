@@ -1,0 +1,25 @@
+{{ $title :=  "" }}
+{{ $hide := true }}
+
+{{/*  Boolean parameters need special care because Hugo treats "false" as unset value */}}
+{{/*  default function recognizes that "false" (boolean) value is set, whereas with function does not */}}
+{{ if .IsNamedParams }}
+  {{ with (.Get "title")}}{{ $title = . }}{{end}}
+  {{ $hide = default true (.Get "hide") }}
+{{ else }}
+  {{ with (.Get 0)}}{{ $title = . }}{{end}}
+  {{ $hide = default true (.Get 1) }}
+{{ end }}
+
+<div class="accordion success">
+{{- /*  See extend_head.html for click event listener attached to the header */ -}}
+<div class="accordion-header">
+{{ $title | markdownify }}
+<div class="accordion-btn"></div>
+</div>
+<div
+    {{ if $hide }} class="accordion-content hide"
+    {{ else }} class="accordion-content" {{ end }}>
+    {{ .Inner }}
+</div>
+</div>

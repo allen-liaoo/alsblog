@@ -1,12 +1,33 @@
 ---
-title: 'Markdown Crash Test'
+title: 'Test Page'
 date: 2024-04-04T22:30:23-05:00
-type: post
 draft: true
-tags: ["testing"]
+type: pages
+tags: []
 ShowToc: true
-TocOpen: true
+TocOpen: false
 ---
+
+{{% accordion "abc" false %}}
+**abhwk**qerqkw
+lkekmwq
+
+    qelkaj,o3fq
+    qa2o,efhdmai2q
+    a12e,fouh,a2
+    az12fiouh,ai32
+    a.1o2fu,ah2o1
+    a12oife
+    a12ef
+    2ef
+    2e2e
+    q2e
+    re2q
+
+    rqe
+- qwe
+- -q
+{{% /accordion %}}
 
 ```go
 package main

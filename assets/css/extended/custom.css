@@ -5,6 +5,11 @@
     /* blockquote, proof, and various post content background */
     --highlight-background: rgba(245, 245, 245, 0.587);
     --link-background-color: rgb(227, 224, 220); /* ToC Highlight */
+
+    /* Color sets */
+    --success-primary: rgb(142, 199, 138);
+    --success-bg: rgba(185, 231, 182, 0.6);
+    --success-hover: rgb(140, 216, 136);
 }
 
 /* Dark theme */
@@ -17,6 +22,11 @@
     --content: rgb(229, 229, 230); /* Text color */
     --code-bg: rgb(55, 63, 74); /* ToC background, foodnote*/
     --link-background-color: rgb(90, 110, 135);  /* ToC Highlight */
+
+    /* Color sets */
+    --success-primary: rgb(86, 102, 81);
+    --success-bg: rgba(84, 103, 82, 0.6);
+    --success-hover: rgb(126, 147, 120);
 }
 
 /* Light theme and Dark theme */

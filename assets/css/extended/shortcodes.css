@@ -1,0 +1,130 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    /* fit the content of the child so centering by margin works */
+    width: fit-content;
+}
+
+.right {
+    margin-left: auto;
+    margin-right: 0px;
+    /* fit the content of the child so centering by margin works */
+    width: fit-content;
+}
+
+.center,.right > * {
+    /* sometimes the child element is at 100% width, so centering by margin doesn't work */
+    width: fit-content;
+}
+
+/* proof shortcode */
+.proof {
+    border-width: 1px !important;
+    background-color: var(--highlight-background);
+    padding: 0.5em;
+    opacity: 0.9;
+    border-radius: 3px;
+    margin-bottom: var(--content-gap);
+}
+
+/* Delete content gap space from last child to qed */
+.proof :nth-last-child(2) {
+    margin-bottom: 0px;
+}
+
+.proof .qed {
+    font-size: 1em;
+    float: right;
+    padding-left: 0;
+    margin: 0;
+    line-height: 0%;
+    /* no line-height so it doesn't get forced into a new line, although it still does :( */
+}
+
+/* Add space to proof env to includ qed symbol */
+.proof::after {
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0.3em;
+}
+
+/* theorems shortcode */
+/* no margin bottom */
+.thm p:first-child,
+.thm :last-child {
+    margin-bottom: 0px;
+}
+
+/* accordion shortcode */
+/* accordion coloring */
+.accordion.success {
+    --accordion-primary: var(--success-primary);
+    --accordion-bg: var(--success-bg);
+    --accordion-hover: var(--success-hover);
+}
+
+.accordion-header {
+    display: block;
+    width: inherit;
+    background-color: var(--accordion-primary);
+    padding: 0.5em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.accordion-header:hover {
+    background-color: var(--accordion-hover);
+}
+
+.accordion:not(.hidden) .accordion-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.accordion-btn {
+    float: right;
+
+    width: 0.7em;
+    height: 0.7em;
+    /* Downward arrow */
+    border: solid var(--content);
+    border-width: 0 3px 3px 0;
+    display: block;
+    padding: 3px;
+    transform: translate(-0.5em, 0.5em) rotate(45deg);
+}
+
+.accordion.hidden .accordion-btn {
+    /* translate to take care of padding and vertical positioning */
+    transition: 0.2s;
+    transform: translate(-0.5em, 0.5em) rotate(45deg);
+    -webkit-transform: translate(-0.5em, 0.5em) rotate(45deg);
+}
+
+.accordion:not(.hidden) .accordion-btn {
+    /* translate to take care of padding and vertical positioning, use scale to flip arrow */
+    transition: 0.2s;
+    transform: translate(-0.5em, 0.5em) rotate(-135deg);
+    -webkit-transform: translate(-0.5em, 0.5em) rotate(-135deg);
+}
+
+/* height and padding is set dynamically by javascript */
+.accordion-content {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: var(--accordion-bg);
+    transition: height 0.1s;
+}
+
+.accordion-content :last-child {
+    margin-bottom: 0px;
+}
+
+.accordion.hidden .accordion-content {
+    height: 0px !important;
+    overflow: hidden;
+    transition: height 0.1s;
+}
