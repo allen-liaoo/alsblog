@@ -96,11 +96,12 @@
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 
   /* Custom settings */
-	--color-btn-primary-bg: var(--primary-custom);
-	--color-btn-primary-hover-bg: rgb(41, 179, 239);
+  --alt-primary-custom: rgb(41, 179, 239);
+	--color-btn-primary-bg: var(--alt-primary-custom);
+	--color-btn-primary-hover-bg: var(--primary-custom);
 	--color-btn-primary-selected-bg: rgb(122, 198, 228);
 	--color-btn-primary-disabled-bg: rgb(93, 160, 186);
-	--color-accent-fg: var(--primary-custom);
+	--color-accent-fg: var(--alt-primary-custom)
 }
 
 main .pagination-loader-container {
