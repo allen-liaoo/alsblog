@@ -12,7 +12,7 @@ cover:
 Ok, the title is a bit of a click bait. I have a particular version of the Grim Reaper paradox in mind, namely the one that many uses to argue against the *logical* or *metaphysical* possibility of an infinite past. Here, I will show how this version of the Grim Reaper paradox is the Yablo paradox in disguise (although with some ~~important~~ differences), why that matters, and drawing from their parallel, conclude with why the Grim Reaper paradox fails to show the *im*possibility of an infinite past.
 
 ## The Twinning Paradoxes
-### Grim Reaper Paradox {#GM}
+### Grim Reaper Paradox {#gm}
 This is the Grim Reaper paradox (GM):
 > Suppose that the temporal series of past events is [actually infinite](https://en.wikipedia.org/wiki/Actual_infinity) and that an actually infinite number of Grim Reapers exist. Suppose also that, at each [day in the past], a unique Reaper was assigned to issue a death warrant iff no previous Reaper had already issued a death warrant. ([Cohen on the Kalam Cosmological Argument](https://philarchive.org/archive/COHEFA-2), p. [11]) [^1]
 
@@ -52,7 +52,7 @@ How does all of this relates to the GM paradox? Well, we just need to *count bac
 >$G_3'$ = For all $t \gt 3$, $\lnot G_t$$$  
 >$\vdots$
 
-This is not similar enough to the Yablo paradox yet. Each of $G_t'$ is distinct from $G_t$ because each $G_t'$ says something about all $G_t$, but says anything about other $G_t'$s. But notice that each $G_t$ looks just like the right hand side formula 2 when we introduced the [GM paradox](#GM). So we can add this additional principle:
+This is not similar enough to the Yablo paradox yet. Each of $G_t'$ is distinct from $G_t$ because each $G_t'$ says something about all $G_t$, but says anything about other $G_t'$s. But notice that each $G_t$ looks just like the right hand side formula 2 when we introduced the [GM paradox](#gm). So we can add this additional principle:
 >**G-Schema**: $G_t' \leftrightarrow G_t$
 
 How do we use this to derive a contradiction? Exactly the same way we derived a contradiction in the [Yablo paradox](#yablo-paradox)! In case you're not convinced, here is the proof:
