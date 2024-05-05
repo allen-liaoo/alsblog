@@ -6,3 +6,7 @@ TZ = "America/Chicago"
 publish = "public"
 command = "hugo --gc"
 
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"

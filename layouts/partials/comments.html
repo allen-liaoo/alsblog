@@ -1,6 +1,69 @@
 <!-- This file is auto-deteced by PaperModX (when params.comments = true) -->
+<div id="giscus-comments-box"></div>
+
+<script>
+// See theme's partials/header.html
+
+// Get theme stored in localStorage
+function getGiscusTheme() {
+    const theme = localStorage.getItem("pref-theme") // set by PaperModX
+    switch (theme) {
+        case 'light':
+            return window.location.origin+'/giscus-light1.css' // github light
+        case 'dark': 
+            return window.location.origin+'/giscus-light.css' // github Dark Tritanopia
+        default: 
+            return 'preferred_color_scheme' // giscus detects
+    }
+}
+
+// Send message to giscus iframe to change theme
+function setGiscusTheme() {
+    function sendMessage(message) {
+        const iframe = document.querySelector('iframe.giscus-frame')
+        if (!iframe) return
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+    sendMessage({
+        setConfig: {
+            theme: getGiscusTheme(),
+        },
+    })
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "allen-liaoo/alsblog",
+        "data-repo-id": "R_kgDOLqCjtg",
+        "data-category": "Comments",
+        "data-category-id": "DIC_kwDOLqCjts4CfH8X",
+        "data-mapping": "pathname",
+        "data-strict": "0",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "top",
+        "data-theme": getGiscusTheme(),
+        "data-lang": "en",
+        "data-loading": "lazy",
+        "crossorigin": "anonymous",
+        "async": "",
+    }
+
+    // Dynamically create script tag and add to DOM
+    const giscusScript = document.createElement("script")
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value))
+    let divToAdd = document.getElementById('giscus-comments-box')
+    divToAdd.appendChild(giscusScript)
+
+    // Add listener to listen for switching themes
+    window.addEventListener("toggle-theme", () => {
+        setGiscusTheme()
+    })
+})
+</script>
 <!-- Added for Giscus comments -->
-<script id="giscus-comments"
+{{/*  <script id="giscus-comments"
         src="https://giscus.app/client.js"
         data-repo="allen-liaoo/alsblog"
         data-repo-id="R_kgDOLqCjtg"
@@ -16,4 +79,4 @@
         data-loading="lazy"
         crossorigin="anonymous"
         async>
-</script>
+</script>  */}}
