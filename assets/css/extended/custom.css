@@ -24,9 +24,9 @@
     --link-background-color: rgb(90, 110, 135);  /* ToC Highlight */
 
     /* Color sets */
-    --success-primary: rgb(86, 102, 81);
-    --success-bg: rgba(84, 103, 82, 0.6);
-    --success-hover: rgb(126, 147, 120);
+    --success-primary: rgb(81, 102, 91);
+    --success-bg: rgba(64, 81, 72, 0.591);
+    --success-hover: rgb(94, 115, 100);
 }
 
 /* Light theme and Dark theme */
