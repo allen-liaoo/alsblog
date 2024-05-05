@@ -1,10 +1,14 @@
 /* From Giscus's github dark theme
-    Chhanged:
+    Changed: color of comment button to the primary custom color
  */
 /*! MIT License
  * Copyright (c) 2018 GitHub Inc.
  * https://github.com/primer/primitives/blob/main/LICENSE
  */
+
+ :root {
+    --primary-custom: rgb(153, 214, 238);  /* dark theme color */
+ }
 
  main {
     --color-prettylights-syntax-comment: #8b949e;
@@ -48,7 +52,7 @@
     --color-btn-active-border: #6e7681;
     --color-btn-selected-bg: #161b22;
     --color-btn-primary-text: #fff;
-    --color-btn-primary-bg: #238636;
+    --color-btn-primary-bg: var(--primary-custom);
     --color-btn-primary-border: rgb(240 246 252 / 10%);
     --color-btn-primary-shadow: 0 0 transparent;
     --color-btn-primary-inset-shadow: 0 0 transparent;
