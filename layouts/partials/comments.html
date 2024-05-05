@@ -6,15 +6,26 @@
 
 // Get theme stored in localStorage
 function getGiscusTheme() {
-    const theme = localStorage.getItem("pref-theme") // set by PaperModX
+    let theme = localStorage.getItem("pref-theme") // set by PaperModX
+    // If preferred theme unknown, then set it to either "light" or "dark" 
+    // (so this code is independent of the default theme of the site)
+    // Obtains currently displayed theme by checking if body has "dark" class
+    if (theme !== 'light' && theme !== 'dark') {
+        if (document.body.classList.contains('dark'))
+            theme = 'dark'
+        else theme = 'light'
+    }
+
+    // For custom themes, must allow CORS of "https://giscus.app" on the server for it to work
+    // For testing purposes, I use built in github light/dark theme
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+
     switch (theme) {
-        // NOTE: Must allow CORS of "https://giscus.app" for custom theme to work
         case 'light':
-            return window.location.origin+'/giscus-light.css' // custom light theme 
+            return isLocal ? 'light' : window.location.origin+'/giscus-light.css' // custom light theme 
         case 'dark': 
-            return window.location.origin+'/giscus-dark.css' // custom dark theme
         default: 
-            return 'preferred_color_scheme' // giscus detects
+            return isLocal ? 'dark' : window.location.origin+'/giscus-dark.css' // custom dark theme
     }
 }
 

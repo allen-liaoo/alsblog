@@ -12,11 +12,11 @@
     /* post content accent color */
     --primary-custom: rgb(153, 214, 238);
     /* blockquote, proof, and various post content background */
-    --highlight-background: rgba(65, 70, 79, 0.668);
+    --highlight-background: rgba(51, 56, 67, 0.668);
     /* theme vars */
     --content: rgb(229, 229, 230); /* Text color */
-    --code-bg: rgb(55, 55, 60); /* ToC background, foodnote*/
-    --link-background-color: rgb(80, 84, 89);  /* ToC Highlight */
+    --code-bg: rgb(55, 63, 74); /* ToC background, foodnote*/
+    --link-background-color: rgb(90, 110, 135);  /* ToC Highlight */
 }
 
 /* Light theme and Dark theme */
