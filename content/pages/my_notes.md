@@ -2,7 +2,6 @@
 title: 'My Notes'
 date: 2024-05-04T12:27:22-05:00
 description: A collection of notes I have on various topics.
-type: pages
 ShowReadingTime: false
 ---
 

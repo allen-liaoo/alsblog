@@ -4,18 +4,22 @@ defaultTheme: light
 favicon: favicon.png
 appleTouchIcon: favicon.png
 
-# per post settings
+# param for home/archive listing
+mainSections: posts # section to search posts from
+
+# theme setting per post
+comments: true
+math: true # math mode on by default
 editPost:
   URL: "https://github.com/allen-liaoo/alsblog/tree/HEAD/content"
   Text: "View Source" # edit text
   appendFilePath: true # to append file path to Edit link
-comments: true
 TocSide: left
 showToc: true
 TocOpen: true
 ShowBreadCrumbs: true
-ShowCodeCopyButtons: true
 ShowReadingTime: true
+ShowCodeCopyButtons: true # for each codeblock
 
 # EnableInstantClick: true
 
@@ -29,9 +33,6 @@ fuseOpts:
 
 assets:
   disableHLJS: true # disable papermod's highlight.js
-
-# math mode on by default
-math: true
 
 socialIcons: # optional for home page mode (not on)
   - name: "Github"

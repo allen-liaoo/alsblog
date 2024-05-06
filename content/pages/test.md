@@ -1,8 +1,6 @@
 ---
 title: 'Test Page'
 date: 2024-04-04T22:30:23-05:00
-draft: true
-type: pages
 tags: []
 ShowToc: true
 TocOpen: false
