@@ -3,3 +3,8 @@
 Visit: [alsblog.netlify.app](https://alsblog.netlify.app)
 
 Built with Hugo and PaperModX.
+
+#### Run
+```bash
+hugo server
+```

@@ -32,7 +32,6 @@ ShowReadingTime: false
 - [SQL](https://docs.google.com/document/d/1Tji68Fnmp5NR7TqYoAC6aIMelXoduzMxsGzxSs5tuoI/edit?usp=sharing)
 
 ### Algorithms
-- [Sorting & Selection](https://docs.google.com/document/d/1_JM3nE22iwsEoWEHHTprlb8z-qOJp85AX2XT0oa2VeY/edit?usp=sharing)
-- [Dynamic Programming & Greedy](https://docs.google.com/document/d/1AYqeN66MVEjrjzYg0PCoi92rnhBeeQx-F-B8LtnqP28/edit?usp=sharing)
-- [Graph](https://docs.google.com/document/d/1UA8M1YM3E7-dllHJ2OoxhC0Um0vA1LNb5PuXrJeNQzA/edit?usp=sharing)
+- [Algorithmns](https://docs.google.com/document/d/1c5NWjmDnOb9pX5kyGCYs9kWXMxJfTOGDJAeE7McbLbA/edit?usp=sharing) – Sorting and Selection, Dynamic Programming and Greedy, Graph algorithms (Search, MST, Disjoint set forest, Dijkstra's, All Pairs)
+- [Advanced Algorithmns and Datastructures](https://docs.google.com/document/d/1Bc_xBFKqkn6rqG8KYyuqpKKnxhrrM1dswTAegNigveM/edit?usp=sharing) – Divide and Conquer, Dynamic Programming, Greedy, Approximation Algorithms, Search Data Structures Amortized Analysis and Datastructures
 - [Machine Learning](https://docs.google.com/document/d/1fMBfD8UZXUVxh0lIZAlbyqwaR2dfoIqic0o-zsC-z9I/edit?usp=sharing) – Warning: bad quality and introductory material

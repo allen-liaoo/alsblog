@@ -23,12 +23,12 @@ Hilbert systems are systems of deduction based on a large set of axioms and a mi
 > 
 > The only inference rules available are [Modus Ponens](https://en.wikipedia.org/wiki/Modus_ponens) (MP; also called $\imp$-Elimination).[^3]
 
-[^1]: These are the axioms for the $\imp$ fragment of minimal logic (hence also intuitionist or classical).
+[^1]: These are the axioms for the $\imp$ fragment of minimal logic (hence also valid in intuitionist and classical logic).
 [^2]: We call this Pseudo-Transitivity (of $\imp$) because transitivity is just axiom 5 with the order of its antecedents flipped: $(C \imp A) \imp (A \imp B) \imp (C \imp B)$. Provided that we also have axiom 6 (permutation), we can straightforwardly derive the transitivity axiom.
 [^3]: We will treat the axioms as axiom schemas, where $P,Q,R,A,B,C$ are schematic variables in the metalanguage. Equivalently, we can also treat them as axioms with propositional variables, and use the uniform substitution rule. So, for example, substituting $A$ for $P$ and $A \imp B$ for $Q$ in axiom 1, we get $A \imp ((A \imp B) \imp A)$.
 
 Note that here, we use the convention that $\imp$ is right associative, meaning
-> $A \imp B \imp C \equiv (A \imp (B \imp C))$
+> $A \imp B \imp C \equiv (A \imp (B \imp C))$.
 
 We may drop or add parenthesis so long that it does not change the structure of the formulas. For a conditional of the form $\phi \imp (\psi \imp \chi)$, we say that the (first and second) **antecedents** are $\phi$ and $\psi$, and the **consequent** is $\chi$.
 
