@@ -1,7 +1,7 @@
 ---
 title: 'My Courseworks'
 date: 2024-05-04T12:27:22-05:00
-description: Github repositories of my courseworks, far from exhaustive.
+description: Github repos of my courseworks. Far from exhaustive.
 ShowReadingTime: false
 ---
 
