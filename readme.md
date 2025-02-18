@@ -5,6 +5,12 @@ Visit: [alsblog.netlify.app](https://alsblog.netlify.app)
 Built with Hugo and PaperModX.
 
 #### Run
+Run dev server:
 ```bash
-hugo server
+hugo server -D
+```
+
+Create new content:
+```bash
+hugo new content content/[path to new file]/[file name].md
 ```
