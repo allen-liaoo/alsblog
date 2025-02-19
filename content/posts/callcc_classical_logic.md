@@ -85,7 +85,22 @@ What is the type of `c`? We know it must take something of type $P$ again, for i
 \[((P \to Q) \to P) \to P.\]
 
 {{% accordion "Author's Note" true "success" %}}
-In a previous iteration of this post, I made the mistake of thinking the return type of `c` must be the type of the outer context (continuation) containing `callcc`. That is not the case, because we should be able to write the last example (the "very strange" one) I gave above. However, it does imply that any use of `c` inside `f` must conform to the return type of `c`, unless typing is not static.
+In a previous iteration of this post, I made the mistake of thinking the return type of `c` must be the type of the outer context (continuation) containing `callcc`. That is not the case, because we should be able to write the last example (the "strange" one) I gave above. 
+
+Also, even though it might look like `c` must have a fixed return type inside `f`, `c` is actually more like a polymorphic function, where $Q$ is whatever type you need it to be. In other words, this is legal:
+
+```
+1 + callcc (fn x => 2 + (c 5); "hello" ^ (c 3));
+```
+
+`2 + ...` expects `c` to return `int`, whereas `"hello" ^ ...` expects `c` to return `string`, which is fine when `c` is a polymorphic function.
+
+In conclusion, `callcc`'s actual type is
+
+\[
+  \prod P: *.\ \left(\left(\prod Q: *Q.\ P \to Q\right) \to P\right) \to P.
+\]
+
 {{% /accordion %}}
 
 ### Part 2: Connection to Classical Logic
