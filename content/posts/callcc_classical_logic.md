@@ -1,8 +1,7 @@
 ---
 title: 'callcc and Classical Logic'
 date: 2025-02-18T10:25:13-06:00
-pubDate: null
-draft: true
+pubDate: 2025-02-19
 tags: ['logic', 'programming', 'type theory']
 ---
 
