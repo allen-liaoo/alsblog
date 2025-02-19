@@ -98,7 +98,7 @@ Also, even though it might look like `c` must have a fixed return type inside `f
 In conclusion, `callcc`'s actual type is
 
 \[
-  \prod P: *.\ \left(\left(\prod Q: *Q.\ P \to Q\right) \to P\right) \to P.
+  \prod P: *.\ \left(\left(\prod Q: *.\ P \to Q\right) \to P\right) \to P.
 \]
 
 {{% /accordion %}}
