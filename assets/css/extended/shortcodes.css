@@ -77,7 +77,7 @@
     background-color: var(--accordion-hover);
 }
 
-.accordion:not(.hidden) .accordion-header {
+.accordion:not(.hide) .accordion-header {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 0;
@@ -97,14 +97,14 @@
     transform: translate(-0.5em, 0.5em) rotate(45deg);
 }
 
-.accordion.hidden .accordion-btn {
+.accordion.hide .accordion-btn {
     /* translate to take care of padding and vertical positioning */
     transition: 0.2s;
     transform: translate(-0.5em, 0.5em) rotate(45deg);
     -webkit-transform: translate(-0.5em, 0.5em) rotate(45deg);
 }
 
-.accordion:not(.hidden) .accordion-btn {
+.accordion:not(.hide) .accordion-btn {
     /* translate to take care of padding and vertical positioning, use scale to flip arrow */
     transition: 0.2s;
     transform: translate(-0.5em, 0.5em) rotate(-135deg);
@@ -123,7 +123,7 @@
     margin-bottom: 0px;
 }
 
-.accordion.hidden .accordion-content {
+.accordion.hide .accordion-content {
     height: 0px !important;
     overflow: hidden;
     transition: height 0.1s;

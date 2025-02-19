@@ -10,6 +10,8 @@
     --success-primary: rgb(142, 199, 138);
     --success-bg: rgba(185, 231, 182, 0.6);
     --success-hover: rgb(140, 216, 136);
+    
+    --content-gap: 15px;
 }
 
 /* Dark theme */
@@ -52,7 +54,7 @@
 
 /* prooftable has no table header, row border, and margin-bottom
    used for line by line proofs */
-   .prooftable {
+.prooftable {
     margin-bottom: 0 !important;
 }
 

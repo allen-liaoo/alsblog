@@ -7,13 +7,10 @@
     /* 400px !important; */
 }
 
-.post-content p , .post-content dl {
-    margin-bottom: 10px;
-}
-
-.post-content ul {
-    margin-top: 0;
-    margin-bottom: 10px;
+/* line/block spacing */
+/* allow MathJax elements to use more space */
+.post-content > :not(.MathJax) {
+    margin-bottom: var(--content-gap) !important;
 }
 
 .post-content blockquote {

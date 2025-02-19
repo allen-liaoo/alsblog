@@ -16,22 +16,9 @@ I couldn't find a simple written explanation of `callcc`, its type, and the conn
 #### Prelude: Syntax
 The syntax we use here is close to functional programming languages like ML.
 - Everything is an expression, so has a value.
-- Function definition: A function that takes input `x`, `y` and return `z` is written as
-```
-fn x y => z
-```
-  
-  Besides `callcc`, any other function is anonymous.
-- Function application: To call a function `f` with arguments `x` and `y`, we write  
-```
-f x y
-```
-- Function type: A function `f` with arguments `x` and `y` has the type 
->$A \to (B \to C)$
-
-if `x` has type $A$, `y` has type $B$, and the return value of $f$ has type `C`. Any function that takes multiple arguments are actually functions that take one argument and return another function (and so on). [^2]
-[^2]: See [Currying](https://en.wikipedia.org/wiki/Currying).
-
+- Function definition: A function that takes input `x` and return `z` is written as `(fn x => z)`. All functions take only one argument. Besides `callcc`, any other function is anonymous.
+- Function application: To call a function `f` with arguments `x`, we write `f x` (with space in-between).
+- Function type: A function `f` with arguments `x` has the type $A \to B$ if `x` has type $A$ and the return value of $f$ has type `B`. Note that `x` or the return value could be functions, in which case we parenthesize the type accordingly. For example, if `x` is a function of type $A \to C$, then `f` has type $(A \to C) \to B$.
 - When we write expressions in sequence, `e1; e2; ...; en`, the whole expression has the value of `en`.
 
 There are other mischellaneous syntaxes like integer addition, which we won't be focusing on. But they should be obvious.
@@ -71,24 +58,35 @@ Inside `callcc`, expression sequences are evaluated left to right. First, `7+9` 
 
 So you can see that calling `c` basically aborts the computation inside `callcc`, and "returns the argument to `c` as value to the outer context."
 
+Let us look at something stranger as our last example (Here, `^` is string concatenation):
+```
+"This is " ^ callcc (fn c => 1 + (c "strange"); "not strange")
+```
+
+Again, `1` is evaluated, and `c "strange"` is as well, which evaluates the whole program to the string `"This is strange"`. `"not strange"` is never evaluated. Notice that we tried to add an integer with the result of `c "strange"`; this is fine because `c "strange"` will never return a value to be added!
+
 **So, what is the type of `callcc`?**
 
 In either case (whether `c` is used or not), it must return the same type that the outer context is expecting of it (in previous examples, that would be an `int`, because $1 + \dots$ expects an `int`).
-So if the outer context is expecting type $A$, we know that it must have the type
+So if the outer context is expecting type $P$, we know that it must have the type
 
-\[? \to A\]
+\[? \to P\]
 
-where "$?$" is the type of the function it takes as argument (`f`).
+where "$?$" is the type of the function it takes as argument: `f`.
 
-What is the type of `f`? it must take some function `c`, and return the same type as what the outer context expects (as in the first case where `c` is unused). So the type of `callcc` is:
+What is the type of `f`? it must take some function `c`, and return the same type as what `callcc` returns. So the type of `callcc` is:
 
-\[(? \to A) \to A\]
+\[(? \to P) \to P\]
 
-where $c$ has type "$?$".
+where "$?$" is the type of `c`.
 
-What is the type of `c`? We know it must take something of type $A$ again, for it to be useable in the outer context. But what does the outer context return? This is unknowable inside any of these functions, so it must be some general type that could be $A$, but need not be (in the previous examples, the outer context also has type `int`, but it could just as well be, say, `string`). So the type of `callcc` becomes:
+What is the type of `c`? We know it must take something of type $P$ again, for it to be useable in the outer context. But what is its return type? Here, it does not matter, because as soon as `c` is called, it will never return to inside the `f` function. So it can be anything. Let's give it another variable, `Q`. So the type of `callcc` becomes:
 
-\[((A \to B) \to A) \to A.\]
+\[((P \to Q) \to P) \to P.\]
+
+{{% accordion "Author's Note" true "success" %}}
+In a previous iteration of this post, I made the mistake of thinking the return type of `c` must be the type of the outer context (continuation) containing `callcc`. That is not the case, because we should be able to write the last example (the "very strange" one) I gave above. However, it does imply that any use of `c` inside `f` must conform to the return type of `c`, unless typing is not static.
+{{% /accordion %}}
 
 ### Part 2: Connection to Classical Logic
 How does all this relate to classical logic? If you have heard of the [Curry-Howard Correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence), you know that in certain programming languages, the types of well-typed programs corresponds to theorems of some logic, and the programs corresponds to the proofs of the theorems. 
@@ -98,14 +96,16 @@ It is well-known that a language with the function, product, and sum type corres
 [^3]: In [lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus) (the language we are using), $\lambda x. y$ is a function that takes $x$ as input and returns $y$, and $A\ B$ is calling a function $A$ with $B$ as input (separated by space). So for example, $(\lambda\ x. x)\ 1$ returns $1$.
 
 #### Type Theory and Intuitionist Logic
+Here, we outline the connection between types and connectives, and provide rules that will be useful to us. The rules we give are typing rules, but their logical counterparts is identical except for each pairing $\alpha : M$, we treat the type $M$ as a proposition, and ignore $\alpha$, the program. Note that $\Gamma$ is a set of such pairings.[^4]
+
+[^4]: Each statement in a rule has the format $\Gamma \tf \alpha : M$. In the type theory realm, it says that given the pairing of types to variables in the set $\Gamma$, we can derive that $\alpha$ has type $M$. In the logic realm, it says that given the premises (types) in $\Gamma$, we can derive the conclusion $M$. Rules can be read in a top down manner: If statements above the line holds, then the statement below the line holds. 
 
 - The **function type** corresponds to implication. In other words, a function of type $A \to B$ transforms proofs of $A$ to proofs of $B$. The lambda abstraction/application rule corresponds to the implication introduction/elimination rule, respectively.
 
 \begin{prooftree}
-\AXC{$\Gamma \tf x: A$}
-\AXC{$\Gamma \tf y: B$}
+\AXC{$\Gamma, x: A \tf y: B$}
 \RL{$\lambda$abst/$\to$Intro}
-\BIC{$\Gamma \tf \lambda x.\ y : A \to B$}
+\UIC{$\Gamma \tf \lambda x.\ y : A \to B$}
 \end{prooftree}
 
 \begin{prooftree}
@@ -145,13 +145,14 @@ There is, however, a less well-known proposition that is equivalent to the two a
 Pierce's law
 : $((P \to Q) \to P) \to P$
 
-If you change the $P$ to $A$ and $Q$ to $B$, you'll realize: this is exactly the type of `callcc`!
+This is exactly the type of `callcc`!
 
-This tells us that when our type theory is intuitionistic, we just need to add `callcc` to get a type theory for classical logic. At this point, you might not be convinced yet, and that's ok. Let us prove that Pierce's law implies DNE.[^4]
+This tells us that when our type theory is intuitionistic, we just need to add `callcc` to get a type theory for classical logic. This makes sense, because if we let $Q = \bot$, Pierce's law looks like a special instance of proof by contradiction (where the contradiction is $P$ and $\neg P$).
 
-[^4]: We leave the reverse direction to the reader because it is unnecessary for our purposes, and we don't have a concrete function whose type is DNE that we can use to construct a function whose type is Pierce's law.
+You might not be convinced yet at this point, and that's ok. Let us prove that Pierce's law implies DNE.[^5] First, we give a purely logic proof (intuitionistically valid):
 
-First, we give a proof purely in terms of logic (intuitionistically valid):
+[^5]: We leave the reverse direction to the reader because it is unnecessary for our purposes, and we don't have a concrete function whose type is DNE that we can use to construct a function whose type is Pierce's law.
+
 {{% proof "Pierce\'s law $\Rightarrow$ DNE" %}}
 ||||
 |:--|:---|:--|
@@ -163,6 +164,7 @@ First, we give a proof purely in terms of logic (intuitionistically valid):
 |6. | $\neg P \to P$, or $(P \to \bot) \to P$ | Conditional proof, 3 ~ 5 |
 |7. | $P$ | $\to$Elim, 1 and 6 (where $Q$ is $\bot$) |
 |8. | $\neg\neg P \to P$ | Conditional proof, 2 ~ 7 |
+{ .prooftable }
 {{% /proof %}}
 
 Then we give the program whose type is the proposition DNE, using `callcc`:
@@ -175,9 +177,9 @@ Then we give the program whose type is the proposition DNE, using `callcc`:
     : ((P \to \bot) \to \bot) \to P.
 \]
 
-This might seem a bit complicated at first, so I annotated relevant variables and expressions with their types. Here is the relation between the program and the proof above:
+This might seem a bit complicated at first, so I annotated relevant variables and expressions with their types. Here is the relation between the proof above and the program:
 
-1. corresponds to the use of `callcc` as a well typed function
+1. corresponds to the premise that `callcc` is a well typed function
 2. corresponds to binding $x$ in the outer $\lambda$
 3. corresponds to binding $y$ in the inner $\lambda$
 4. corresponds to the type of $x\ y$
@@ -186,4 +188,4 @@ This might seem a bit complicated at first, so I annotated relevant variables an
 7. corresponds to the lambda application to `callcc`
 8. corresponds to the lambda abstraction of $\lambda x.$
 
-The whole program then has the type of DNE. Knowing the program representing the proof, one can easily rewrite the proof in the same style as the inference rules mentioned above. Since it wouldn't be too readable on this page, we leave that as an exercise to the reader.
+The whole program then has the type of DNE. Knowing the program representing the proof, one can easily rewrite the proof in the same style as the inference rules mentioned above. Since it would be a bit unreadable on this page, we leave it as an exercise to the reader.

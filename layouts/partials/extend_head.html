@@ -32,16 +32,16 @@ window.addEventListener('DOMContentLoaded', function() {
         if (!header || !content) continue
 
         // init: if not hidden, set content height
-        if (accrd.classList.contains("hidden"))
+        if (accrd.classList.contains("hide"))
             setHiddenStyle(content)
         else setShownStyle(content)
 
         header.addEventListener("click", (e) => {
             // if hidden right now, add height then toggle
-            if (accrd.classList.contains("hidden"))
+            if (accrd.classList.contains("hide"))
                 setShownStyle(content)
             else setHiddenStyle(content)
-            accrd.classList.toggle("hidden")
+            accrd.classList.toggle("hide")
         })
     }
 });
