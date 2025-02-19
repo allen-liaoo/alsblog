@@ -7,6 +7,15 @@
     /* 400px !important; */
 }
 
+.post-content p , .post-content dl {
+    margin-bottom: 10px;
+}
+
+.post-content ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 .post-content blockquote {
     border-inline-start: 3px solid var(--primary-custom);
     background-color: var(--highlight-background);

@@ -1,14 +1,18 @@
 <!-- Added for MathJax feature ($ for inline and macros) -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
   MathJax = {
+    loader: {load: ['[tex]/bussproofs', '[tex]/ams', '[tex]/mathtools']},
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  // block
       inlineMath: [['\\(', '\\)'],['$','$']],       // inline
       macros: {
         gcode: ["\\ulcorner #1 \\urcorner", 1],
-        imp: "\\rightarrow"
+        imp: "\\rightarrow",
+      },
+      packages: {
+        '[+]': ['bussproofs', 'ams', 'mathtools']
       }
     }
   };
