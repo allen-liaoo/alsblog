@@ -9,7 +9,7 @@ tags: ['logic', 'programming', 'type theory']
 > \[\def\tf{\vdash}\]
 { class=hidden }
 
-I couldn't find an easy written explanation of `callcc`, its type, and the connection to classical logic, so I thought I'd write one here.[^1] I won't assume that you are familiar with the syntax of Scheme (because I'm not), so I will be using a made up language. I hope the first part of this post will be self-contained, so that you don't have to understand any particular langauge to understand `callcc`. The second part concerns how the type of `callcc` relates to classical logic under [Curry-Howard Correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence). I will assume some familiarity and comfort with the concept and type theory notations.
+I couldn't find a simple written explanation of `callcc`, its type, and the connection to classical logic, so I thought I'd write one here.[^1] I won't assume that you are familiar with the syntax of Scheme (because I'm not), so I will be using a made up language. I hope the first part of this post will be self-contained, so that you don't have to understand any particular langauge to understand `callcc`. The second part concerns how the type of `callcc` relates to classical logic under [Curry-Howard Correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence). I will assume some familiarity and comfort with the concept and type theory notations.
 
 [^1]: There is an excellent video on the type of `callcc` [here](https://www.youtube.com/watch?v=7Zkt_IJaYOY).
 
