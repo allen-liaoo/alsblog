@@ -54,7 +54,7 @@ What if we have more code in `callcc`?
 ```
 1 + callcc (fn c => 7 + 9; c 5; c 6)
 ```
-Inside `callcc`, expression sequences are evaluated left to right. First, `7+9` is evaluated. Then `c 5`, which evaluates to `6`, and the computation ends. `c 6` is never evaluated.
+Inside `f`, expression sequences are evaluated left to right. First, `7+9` is evaluated. Then `c 5`. As soon as `c` is called, the computation inside `f` ends, so `c 6` is never evaluated. Since `1 + 5 = 6`, the whole expression evaluates to `6`.
 
 So you can see that calling `c` basically aborts the computation inside `callcc`, and "returns the argument to `c` as value to the outer context."
 
@@ -164,7 +164,7 @@ This is exactly the type of `callcc`!
 
 This tells us that when our type theory is intuitionistic, we just need to add `callcc` to get a type theory for classical logic. This makes sense, because if we let $Q = \bot$, Pierce's law looks like a special instance of proof by contradiction (where the contradiction is $P$ and $\neg P$).
 
-You might not be convinced yet at this point, and that's ok. Let us prove that Pierce's law implies DNE.[^5] First, we give a purely logic proof (intuitionistically valid):
+You might not be convinced yet at this point, and that's ok. Let us prove that Pierce's law implies DNE.[^5] First, we give a purely logical proof (intuitionistically valid):
 
 [^5]: We leave the reverse direction to the reader because it is unnecessary for our purposes, and we don't have a concrete function whose type is DNE that we can use to construct a function whose type is Pierce's law.
 

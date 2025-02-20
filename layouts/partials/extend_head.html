@@ -5,44 +5,4 @@
     {{ partialCached "math.html" . }}
 {{ end }}
 
-<!-- Accordion event listener (see accodion shortcode) -->
-<script>
-function setHiddenStyle(contentElement) {
-    contentElement.style.height = `0px`
-    // have to set padding otherwise the padding is not hidden even if content is
-    contentElement.style.padding = '0em'
-    // if opacity is not set, padding will "transition" in, 
-    // which moves the text in a way that looks laggy
-    contentElement.style.opacity = '0'
-}
-
-function setShownStyle(contentElement) {
-    contentElement.style.padding = '0.5em'
-    contentElement.style.opacity = '1' 
-    contentElement.style.height = `${contentElement.scrollHeight}px`
-}
-
-// after page load...
-window.addEventListener('MathJaxTypesetted', function() {
-    const accordions = document.getElementsByClassName("accordion")
-    for (const accrd of accordions) {
-        const header = accrd.getElementsByClassName("accordion-header").item(0)
-        const content = accrd.getElementsByClassName("accordion-content").item(0)
-        // ignore accordions missing header or content
-        if (!header || !content) continue
-
-        // init: if not hidden, set content height
-        if (accrd.classList.contains("hide"))
-            setHiddenStyle(content)
-        else setShownStyle(content)
-
-        header.addEventListener("click", (e) => {
-            // if hidden right now, add height then toggle
-            if (accrd.classList.contains("hide"))
-                setShownStyle(content)
-            else setHiddenStyle(content)
-            accrd.classList.toggle("hide")
-        })
-    }
-});
-</script>
+{{- partial "accordion.html" . }}

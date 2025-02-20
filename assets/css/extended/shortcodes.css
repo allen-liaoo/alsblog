@@ -111,6 +111,20 @@
     -webkit-transform: translate(-0.5em, 0.5em) rotate(-135deg);
 }
 
+.accordion.hide .accordion-content {
+    height: 0px !important;
+    padding: 0px; /* have to set padding otherwise the padding is not hidden even if content is */
+    opacity: 0px; /* if opacity is not set, padding will "transition" in, which moves the text in a way that looks laggy */
+    transition: height 0.1s;
+}
+
+.accordion:not(.hide) .accordion-content {
+    height: max-content !important;
+    padding: 0.5rem;
+    opacity: 1;
+    transition: height 0.1s;
+}
+
 /* height and padding is set dynamically by javascript */
 .accordion-content {
     border-bottom-left-radius: 5px;
@@ -121,10 +135,4 @@
 
 .accordion-content :last-child {
     margin-bottom: 0px;
-}
-
-.accordion.hide .accordion-content {
-    height: 0px !important;
-    overflow: hidden;
-    transition: height 0.1s;
 }
