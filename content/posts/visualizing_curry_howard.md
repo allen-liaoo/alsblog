@@ -59,7 +59,7 @@ We explain each in turn:
   - The **empty product** $\langle \rangle$ has the empty product type $\top$, which corresponds to... you guessed it, $\top$.
 - **Logical disjunction** corresponds to sum types (unions) since, to have some term of type $\phi + \psi$, we need either a term of type $\phi$ or a term of type $\psi$.
   - There is no term that has the **empty sum** type (if there were, what is its type?). We write $\bot$ for the empty sum type.
-- **Implication** in logic corresponds to function types. \phi function mapping values from $\phi$ to $\psi$ has the type $\phi \to \psi$, which can be seen as mapping proofs of $\phi$ to proofs of $\psi$.
+- **Implication** in logic corresponds to function types. A function mapping values from $\phi$ to $\psi$ has the type $\phi \to \psi$, which can be seen as mapping proofs of $\phi$ to proofs of $\psi$.
 - **Negation** is a special instance of implication, since $\neg \phi \doteq \phi \to \bot$. So $\neg \phi$ means there is a function that transform proofs of $\phi$ to proofs of $\bot$.
 
 From now on, we will use the logical symbols as both propositions and types. We will call the terms/programs *proof terms*. Next, we give the inference rules in our intuitionistic logical/typing proof system. 
@@ -172,7 +172,8 @@ as the inference rule's name suggests.
 $\to$I is conditional proof. It says that if $\psi$ is provable from assumptions $\Gamma$ and $\phi$, then $\phi \to \psi$ is provable from just $\Gamma$. This corresponds to introducing the $\lambda$ operator to bind $x$ and create a function. 
 $\to$E, on the otherhand, is Modus Ponens. This corresponds to function application. We write $f x$ for $x$ applied to $f$ (with space inbetween) in the veins of languages like ML.
 
-Lastly, $\top$ is always provable from any $\Gamma$ ($\langle\rangle$ is always well-typed). But there is no rule to derive $\bot$ (besides $\neg$E), but if it were to be derived, then because of $\bot$E, any proposition $\phi$ can be derived (see [principle of explosion](https://en.wikipedia.org/wiki/Principle_of_explosion)). Here, we use $\text{abort(p)}$ to signify that something has gone wrong with the type of program $p$.
+Lastly, $\top$ is always provable from any $\Gamma$ ($\langle\rangle$ is always well-typed). As for $\bot$, if it were ever to be derived, then any proposition $\phi$ can be derived because of $\bot$E (see [principle of explosion](https://en.wikipedia.org/wiki/Principle_of_explosion)). 
+Here, we use $\text{abort(p)}$ to signify that something has gone wrong with the type of program $p$.
 
 {{% /accordion %}}
 

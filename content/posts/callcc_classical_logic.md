@@ -25,7 +25,7 @@ There are other mischellaneous syntaxes like integer addition, which we won't be
 
 ### Part 1: What is `callcc` and its type?
 
-```
+``` {linenos=false}
 callcc f
 callcc (fn c => ...)
 ```
@@ -36,14 +36,14 @@ To understand how `callcc` works, we split uses of `callcc` into two scenarios:
 
 **Scenario 1:** If `f` in `callcc` returns a value directly without using `c`, then the value is returned, and nothing special happens. Suppose we have the following code:
 
-```
+``` {linenos=false}
 1 + callcc (fn c => 3)
 ```
 
 To evaluate the operator `+`, we evaluate `1` to be `1`, then we evaluate `callcc`. Since it just returns `3`, the whole thing evaluates to `1 + 3 = 4`.
 
 **Scenario 2:** If `f` in `callcc` calls the contituation function `c` with some argument `x`, then `callcc` invokes the current continuation with `x`. The rest of the code inside `callcc` is discarded/aborted (even though they might have been evaluated), and we continue in the current continuation. What does "current continutation" means? An example would help:
-```
+``` {linenos=false}
 1 + callcc (fn c => c 5)
 ```
 You can treat current continuation as a function that wraps the outer code, and replaces `callcc (fn c => ...)` with its argument. So here, the current continuation is `fn x => 1 + x`. This becomes the argument `c` to `f`.
@@ -51,7 +51,7 @@ You can treat current continuation as a function that wraps the outer code, and 
 Again, let us walk through the evaluation. `1` is first evaluated, then we evaluate `callcc`, which calls `c 5`. Then the computation inside callcc is aborted, and the whole expression evaluates to `1 + 5 = 6`. Note that this value is not passed back to the outer context (the `1 + ...`) again, rather, the outer context `c` is used inside `callcc`.
 
 What if we have more code in `callcc`?
-```
+``` {linenos=false}
 1 + callcc (fn c => 7 + 9; c 5; c 6)
 ```
 Inside `f`, expression sequences are evaluated left to right. First, `7+9` is evaluated. Then `c 5`. As soon as `c` is called, the computation inside `f` ends, so `c 6` is never evaluated. Since `1 + 5 = 6`, the whole expression evaluates to `6`.
@@ -59,7 +59,7 @@ Inside `f`, expression sequences are evaluated left to right. First, `7+9` is ev
 So you can see that calling `c` basically aborts the computation inside `callcc`, and "returns the argument to `c` as value to the outer context."
 
 Let us look at something stranger as our last example (Here, `^` is string concatenation):
-```
+``` {linenos=false}
 "This is " ^ callcc (fn c => 1 + (c "strange"); "not strange")
 ```
 
@@ -89,7 +89,7 @@ In a previous iteration of this post, I made the mistake of thinking the return 
 
 Also, even though it might look like `c` must have a fixed return type inside `f`, `c` is actually more like a polymorphic function, where $Q$ is whatever type you need it to be. In other words, this is legal:
 
-```
+``` {linenos=false}
 1 + callcc (fn x => "hello" ^ (c 3); 2 + (c 5));
 ```
 

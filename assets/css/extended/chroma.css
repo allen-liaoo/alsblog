@@ -1,0 +1,19 @@
+/* Override syntax highlighting styles */
+
+/* Line number */
+/* div.chroma pre span.lnt {
+} */
+
+/* Shared by linenum and codeblock */
+div.highlight code {
+    padding: 0.7em;
+    font-size: 0.9em;
+    line-height: 1.5rem;
+}
+
+/* Line number block */
+div.highlight code:has(span.lnt) {
+    padding-right: 0em; 
+}
+
+/* Don't reduce code block padding as line nums can be disabled*/
