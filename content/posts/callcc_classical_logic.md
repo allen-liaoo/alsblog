@@ -67,7 +67,7 @@ Again, `1` is evaluated, and `c "strange"` is as well, which evaluates the whole
 
 **So, what is the type of `callcc`?**
 
-In either case (whether `c` is used or not), it must return the same type that the outer context is expecting of it (in previous examples, that would be an `int`, because $1 + \dots$ expects an `int`).
+In either case (whether `c` is used or not), it must return the same type that the outer context is expecting of it (in the first example, that would be an `int`, because `1 + ...` expects an `int`).
 So if the outer context is expecting type $P$, we know that it must have the type
 
 \[? \to P\]
@@ -84,16 +84,16 @@ What is the type of `c`? We know it must take something of type $P$ again, for i
 
 \[((P \to Q) \to P) \to P.\]
 
-{{% accordion "Author's Note" true "success" %}}
+{{% accordion "Author's Note" true "positive" %}}
 In a previous iteration of this post, I made the mistake of thinking the return type of `c` must be the type of the outer context (continuation) containing `callcc`. That is not the case, because we should be able to write the last example (the "strange" one) I gave above. 
 
 Also, even though it might look like `c` must have a fixed return type inside `f`, `c` is actually more like a polymorphic function, where $Q$ is whatever type you need it to be. In other words, this is legal:
 
 ```
-1 + callcc (fn x => 2 + (c 5); "hello" ^ (c 3));
+1 + callcc (fn x => "hello" ^ (c 3); 2 + (c 5));
 ```
 
-`2 + ...` expects `c` to return `int`, whereas `"hello" ^ ...` expects `c` to return `string`, which is fine when `c` is a polymorphic function.
+`"hello" ^ ...` expects `c` to return `string`, whereas `2 + ...` expects `c` to return `int`, which is fine when `c` is a polymorphic function.
 
 In conclusion, `callcc`'s actual type is
 
@@ -106,7 +106,7 @@ In conclusion, `callcc`'s actual type is
 ### Part 2: Connection to Classical Logic
 How does all this relate to classical logic? If you have heard of the [Curry-Howard Correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence), you know that in certain programming languages, the types of well-typed programs corresponds to theorems of some logic, and the programs corresponds to the proofs of the theorems. 
 
-It is well-known that a language with the function, product, and sum type corresponds to intuitionistic (propositional) logic. Here we set up the language briefly, then look at how `callcc` can extend it so that well-typed programs corresponds to classical theorems.[^3]
+It is well-known that a language with the function, product, and sum type corresponds to [intuitionistic (propositional) logic](https://en.wikipedia.org/wiki/Intuitionistic_logic). Here we set up the language briefly, then look at how `callcc` can extend it so that well-typed programs corresponds to classical theorems.[^3]
 
 [^3]: In [lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus) (the language we are using), $\lambda x. y$ is a function that takes $x$ as input and returns $y$, and $A\ B$ is calling a function $A$ with $B$ as input (separated by space). So for example, $(\lambda\ x. x)\ 1$ returns $1$.
 

@@ -1,0 +1,15 @@
+{{- $columns := split .Inner "--column--" -}} {{- /* Inner markdown split by "--column--" */ -}}
+<div style="display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content:space-around;
+            align-items:flex-start;
+            overflow-x:visible;
+            overflow-y:hidden;
+            height:max-content;">
+    {{ range $columns }}
+        <div style="flex:1;">
+            {{ . | markdownify }}
+        </div>
+    {{ end }}
+</div>

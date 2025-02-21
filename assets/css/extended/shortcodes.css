@@ -58,15 +58,22 @@
 
 /* accordion shortcode */
 /* accordion coloring */
-.accordion.success {
-    --accordion-primary: var(--success-primary);
-    --accordion-bg: var(--success-bg);
-    --accordion-hover: var(--success-hover);
+.accordion.positive {
+    --accordion-primary: var(--positive-primary);
+    --accordion-bg: var(--positive-bg);
+    --accordion-hover: var(--positive-hover);
+}
+
+.accordion.theme_like {
+    --accordion-primary: var(--theme-like-primary);
+    --accordion-bg: var(--theme-like-bg);
+    --accordion-hover: var(--theme-like-hover);
 }
 
 .accordion-header {
     display: block;
     width: inherit;
+    min-height: 2.5em;
     background-color: var(--accordion-primary);
     padding: 0.5em;
     border-radius: 5px;
@@ -127,6 +134,9 @@
 
 /* height and padding is set dynamically by javascript */
 .accordion-content {
+    overflow-x: scroll; 
+    overflow-y: hidden;
+    font-size: 0.9em;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: var(--accordion-bg);

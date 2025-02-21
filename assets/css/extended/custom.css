@@ -7,9 +7,13 @@
     --link-background-color: rgb(227, 224, 220); /* ToC Highlight */
 
     /* Color sets */
-    --success-primary: rgb(142, 199, 138);
-    --success-bg: rgba(185, 231, 182, 0.6);
-    --success-hover: rgb(140, 216, 136);
+    --positive-primary: rgb(142, 199, 138);
+    --positive-bg: rgba(185, 231, 182, 0.6);
+    --positive-hover: rgb(140, 216, 136);
+
+    --theme-like-primary: rgb(245, 205, 156);
+    --theme-like-bg: rgba(233, 212, 154, 0.352);
+    --theme-like-hover: rgb(255, 217, 170);
     
     --content-gap: 15px;
 }
@@ -26,9 +30,13 @@
     --link-background-color: rgb(90, 110, 135);  /* ToC Highlight */
 
     /* Color sets */
-    --success-primary: rgb(81, 102, 91);
-    --success-bg: rgba(64, 81, 72, 0.591);
-    --success-hover: rgb(94, 115, 100);
+    --positive-primary: rgb(81, 102, 91);
+    --positive-bg: rgba(64, 81, 72, 0.591);
+    --positive-hover: rgb(94, 115, 100);
+
+    --theme-like-primary: rgb(64, 122, 145);
+    --theme-like-bg: rgb(36, 63, 73);
+    --theme-like-hover: rgb(83, 143, 167);
 }
 
 /* Light theme and Dark theme */

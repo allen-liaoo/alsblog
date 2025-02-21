@@ -1,7 +1,7 @@
 <!-- Bug: Accordion can't be hidden on page load -->
 {{ $title :=  "" }}
 {{ $hide := true }}
-{{ $color := "success" }}
+{{ $color := "positive" }} {{/* viable css classes: positive, theme_like */}}
 
 {{/*  Boolean parameters need special care because Hugo treats "false" as unset value */}}
 {{/*  default function recognizes that "false" (boolean) value is set, whereas with function does not */}}

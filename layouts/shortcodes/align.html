@@ -2,5 +2,5 @@
 {{- /* Doesnt work when text is in some complicated markdown env (i.e. table) */ -}}
 {{ $centering := default "center" (.Get 0) }}
 <div style="text-align: {{ $centering }};">
-{{ .Inner }}
+{{ .Inner | markdownify }}
 </div>    

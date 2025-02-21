@@ -32,7 +32,7 @@ Note that here, we use the convention that $\to$ is right associative, meaning
 
 We may drop or add parenthesis so long that it does not change the structure of the formulas. For a conditional of the form $\phi \to (\psi \to \chi)$, we say that the (first and second) **antecedents** are $\phi$ and $\psi$, and the **consequent** is $\chi$.
 
-{{% accordion "Author's Note" false "success" %}}
+{{% accordion "Author's Note" false "positive" %}}
 As I was finishing up this post, I realized that axiom 5 and 6 have already been proved [on Wikipedia](https://en.wikipedia.org/wiki/Hilbert_system#Some_useful_theorems_and_their_proofs). But the proof of axiom 6 utilizes the hypothetical syllogism metatheorem, whereas [our proof of axiom 6](#permutation-proof) will not have this dependency.
 {{% /accordion %}}
 

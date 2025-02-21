@@ -17,8 +17,8 @@ editPost:
 TocSide: left
 showToc: true
 TocOpen: true
-ShowBreadCrumbs: true
-ShowReadingTime: true
+ShowBreadCrumbs: false
+ShowReadingTime: false
 ShowCodeCopyButtons: true # for each codeblock
 
 # EnableInstantClick: true
