@@ -146,3 +146,8 @@
 .accordion-content :last-child {
     margin-bottom: 0px;
 }
+
+.yscroll {
+    overflow-x:visible;
+    overflow-y:hidden;
+}

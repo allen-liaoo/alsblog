@@ -4,9 +4,8 @@
             flex-wrap:nowrap;
             justify-content:space-around;
             align-items:flex-start;
-            overflow-x:visible;
-            overflow-y:hidden;
-            height:max-content;">
+            height:max-content;"
+    class="yscroll">
     {{ range $columns }}
         <div style="flex:1;">
             {{ . | markdownify }}

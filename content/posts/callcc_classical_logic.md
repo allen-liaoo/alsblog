@@ -2,7 +2,7 @@
 title: 'callcc and Classical Logic'
 date: 2025-02-18T10:25:13-06:00
 pubDate: 2025-02-19
-tags: ['logic', 'programming', 'type theory']
+tags: ['logic', 'programming', 'type theory', 'curry-howard']
 ---
 
 <!-- hide Tex macros -->
@@ -174,7 +174,7 @@ You might not be convinced yet at this point, and that's ok. Let us prove that P
 |1. | $((P \to Q) \to P) \to P$ | Pierce's law |
 |2. | $\neg\neg P$ | Assume for conditional proof |  
 |3. | $\neg P$ | Assume for conditional proof |  
-|4. | $\bot$ | From $2$ and 3 |
+|4. | $\bot$ | From 2 and 3 |
 |5. | $P$ | By explosion from 4 |
 |6. | $\neg P \to P$, or $(P \to \bot) \to P$ | Conditional proof, 3 ~ 5 |
 |7. | $P$ | $\to$Elim, 1 and 6 (where $Q$ is $\bot$) |
