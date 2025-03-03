@@ -106,12 +106,12 @@ In conclusion, `callcc`'s actual type is
 ### Part 2: Connection to Classical Logic
 How does all this relate to classical logic? If you have heard of the [Curry-Howard Correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence), you know that in certain programming languages, the types of well-typed programs corresponds to theorems of some logic, and the programs corresponds to the proofs of the theorems. 
 
-It is well-known that a language with the function, product, and sum type corresponds to [intuitionistic (propositional) logic](https://en.wikipedia.org/wiki/Intuitionistic_logic). Here we set up the language briefly, then look at how `callcc` can extend it so that well-typed programs corresponds to classical theorems.[^3]
+It is well-known that a language with the function, product, and sum type corresponds to [intuitionistic (propositional) logic](https://en.wikipedia.org/wiki/Intuitionistic_logic). Here we set up the type theory for intuitionist logic briefly, then look at how `callcc` can extend it so that well-typed programs corresponds to classical theorems.[^3]
 
 [^3]: In [lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus) (the language we are using), $\lambda x. y$ is a function that takes $x$ as input and returns $y$, and $A\ B$ is calling a function $A$ with $B$ as input (separated by space). So for example, $(\lambda\ x. x)\ 1$ returns $1$.
 
 #### Type Theory and Intuitionist Logic
-Here, we outline the connection between types and connectives, and provide rules that will be useful to us. The rules we give are typing rules, but their logical counterparts is identical except for each pairing $\alpha : M$, we treat the type $M$ as a proposition, and ignore $\alpha$, the program. Note that $\Gamma$ is a set of such pairings.[^4]
+We outline below the connection between types and connectives, and provide rules that will be useful to us. The rules we give are typing rules, but their logical counterparts is identical except for each pairing $\alpha : M$, we treat the type $M$ as a proposition, and ignore $\alpha$, the program. Note that $\Gamma$ is a set of such pairings.[^4]
 
 [^4]: Each statement in a rule has the format $\Gamma \tf \alpha : M$. In the type theory realm, it says that given the pairing of types to variables in the set $\Gamma$, we can derive that $\alpha$ has type $M$. In the logic realm, it says that given the premises (types) in $\Gamma$, we can derive the conclusion $M$. Rules can be read in a top down manner: If statements above the line holds, then the statement below the line holds. 
 
@@ -142,6 +142,8 @@ In the typing realm, $\Gamma$ is a set of pairings from variables to their types
 \end{prooftree}
 
 - **Negation** is defined as $\neg P \equiv P \to \bot$.
+
+For more information and examples on the Curry Howard correspondence, see my post [here]({{<ref "visualizing_curry_howard">}}).
 
 #### Getting Classical
 

@@ -7,9 +7,11 @@
     --link-background-color: rgb(227, 224, 220); /* ToC Highlight */
 
     /* Color sets */
-    --positive-primary: rgb(142, 199, 138);
-    --positive-bg: rgba(185, 231, 182, 0.6);
-    --positive-hover: rgb(140, 216, 136);
+    --positive-primary: rgb(181, 214, 179);
+    /* rgb(142, 199, 138); */
+    --positive-bg: rgba(207, 233, 205, 0.6);
+    /* rgba(185, 231, 182, 0.6); */
+    --positive-hover: rgb(164, 210, 160);
 
     --theme-like-primary: rgb(245, 205, 156);
     --theme-like-bg: rgba(233, 212, 154, 0.352);
@@ -93,4 +95,16 @@
 .hidden {
     display: none;
     height: 0;
+}
+
+.yscroll {
+    overflow-x:visible;
+    overflow-y:hidden;
+}
+
+/* Custom scrollbar with feature detection */
+@supports (scrollbar-width: thin) {
+    * {
+        scrollbar-width: thin; /* Firefox */
+    }
 }

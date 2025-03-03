@@ -19,7 +19,7 @@
 {{- else }}
   <i>Proof</i>
 {{ end -}}
-{{with $goal -}}{{ printf " of %s" (markdownify .) }}{{end}}.<br />
+{{with $goal -}}{{ printf " of %s." (markdownify .) }}{{end}}<br />
 {{ .Inner }}
 {{- if eq $type "sketch"}}
   <div class="qed" title="Q.E.D.?">⧆</div>

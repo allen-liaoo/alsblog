@@ -15,15 +15,14 @@
   {{ with (.Get 2)}}{{ $color = .}}{{end}}
 {{ end }}
 
-<div class="accordion {{ $color }}">
+<div {{ if $hide }} class="accordion yscroll {{ $color }} hide"
+    {{ else }}class="accordion yscroll {{ $color }}" {{ end }}>
 {{- /*  See extend_head.html for click event listener attached to the header */ -}}
 <div class="accordion-header">
 {{ $title | markdownify }}
 <div class="accordion-btn"></div>
 </div>
-<div
-    {{ if $hide }} class="accordion-content hide"
-    {{ else }} class="accordion-content" {{ end }}>
+<div class="accordion-content">
     {{ .Inner }}
 </div>
 </div>
