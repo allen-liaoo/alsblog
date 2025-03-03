@@ -62,7 +62,7 @@ We explain each in turn:
 - **Negation** is a special instance of implication, since $\neg \phi \doteq \phi \to \bot$. So $\neg \phi$ means there is a function that transform proofs of $\phi$ to proofs of $\bot$.
 
 From now on, we will use the logical symbols as both propositions and types. We will call the terms/programs *proof terms*. Next, we give the inference rules in our intuitionistic logical/typing proof system. 
-If you are familiar with them, feel free to skip to the [next section](#example-proofs).
+If you are familiar with them, feel free to skip to the [next section](#examples-of-correspondences).
 
 \begin{prooftree}
 \AXC{$$}
