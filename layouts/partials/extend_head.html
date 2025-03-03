@@ -1,5 +1,15 @@
 <!-- This file is auto-detected by PaperModX and injected into html header -->
 
+<!-- Google tag (gtag.js) for google analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YY1N5HZ9MP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YY1N5HZ9MP');
+</script>
+
 <!-- Load math -->
 {{ if or .Params.math .Site.Params.math }}
     {{ partialCached "math.html" . }}
