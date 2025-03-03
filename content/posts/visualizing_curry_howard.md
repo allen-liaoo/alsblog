@@ -308,9 +308,9 @@ Well, since $\neg\phi$ is defined as $\phi \to \bot$, proof by negation is just 
 Similarly, line 5 is just a special case of a $\to$E. 
 
 Here is an informal way of converting a proof in the style above to its proof terms:
-1. When you see an assumption, introduce a lambda function, then move into the scope of the lambda function.
-2. When an assumption is no longer needed (line 5, 6, or 8 above), move outside of the scope of the lambda function.
-3. The rest of the steps consists to using the relevant rules for the inferences involved. For example, a $\to$E and $\neg$E means function application.
+> 1. When you see an assumption, introduce a lambda function, then move into the scope of the lambda function.
+> 2. When an assumption is no longer needed (line 5, 6, or 8 above), move outside of the scope of the lambda function.
+> 3. The rest of the steps consists to using the relevant rules for the inferences involved. For example, a $\to$E and $\neg$E means function application.
 
 With all of that in mind, we arrive at the proof term:
 
@@ -439,16 +439,18 @@ We can then get the proof term by reading it off the proof :
 \[
   \begin{align*}
     & \lambda k.\ 
-      \underbrace{k\ r \cdot 
+      \underbrace{k\ (r \cdot 
         (\lambda \overset{\overset{\phi}{\uparrow}}{p}.\ 
-          k\ (\overbrace{l \cdot p)}^{\mathclap{\text{first } \phi \lor (\phi \to \bot)}})
+          k\ (\overbrace{l \cdot p)}^{\mathclap{\text{first } \phi \lor (\phi \to \bot)}}))
           }_{\text{second } \phi \lor (\phi \to \bot)} \\
     & : \underbrace{((\phi \lor (\phi \to \bot)) \to \bot)}_{k} \to \bot
   \end{align*}
 \]
 
-The use of $l\cdot p$ and $r \cdot \dots$ corresponds to disjunction introduction, the lambda functions corresponds to proofs by negation, 
-and the two function applications of $k$ corresponds to $\neg$E. So for example, $\lambda p. k\ (l \cdot p)$ has the type $\phi \to \bot$, since 
-its function body has type $\bot$ (corresponding to line 4 above).
+The use of $l\cdot p$ and $r \cdot \dots$ introduces a sum type $\phi \lor \neg\phi$ from one of $\phi$ or $\neg\phi$, which corresponds to disjunction introduction, the lambda functions corresponds to proofs by negation,
+and the two function applications of $k$ corresponds to $\neg$E. So for example, $\lambda p. k\ (l \cdot p)$ has the type $\phi \to \bot$, since its function body has type $\bot$ (corresponding to line 4 above). After some squinting, we can see that
+everything in the proof is accounted by the proof terms.
 
-We have only been talking about intuitionist propositional logic in this post. There are ways to get classical logic from a type theory; I discussed an example [here]({{<ref "callcc_classical_logic">}}).
+In summary, we looked at different examples to get a feel for the correspondences between logical and typing inference rules, then we gradually move away from typing derivations and just look at the inference rules to figure out the proof terms. Lastly, when necessary, we utilize natural deduction to help us figure out the proof terms.
+
+In this post, we have only been working in intuitionist propositional logic. There are ways to get classical logic from a type theory; I discussed an example [here]({{<ref "callcc_classical_logic">}}).
