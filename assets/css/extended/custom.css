@@ -92,6 +92,8 @@
     margin-bottom: var(--content-gap);
 }
 
+/* common classes */
+
 .hidden {
     display: none;
     height: 0;
@@ -107,4 +109,14 @@
     * {
         scrollbar-width: thin; /* Firefox */
     }
+}
+
+/* home page */
+.post-entry .post-description {
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+}
+
+.post-entry .post-description blockquote {
+    margin: 0em;
 }
