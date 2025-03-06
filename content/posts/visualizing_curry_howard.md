@@ -6,10 +6,6 @@ pubDate: 2025-03-02
 tags: ['logic', 'type theory', 'curry-howard']
 ---
 
-<!-- hide Tex macros -->
-> \[\def\tf{\vdash}\]
-{ class=hidden }
-
 The [Curry-Howard Correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence) says that 
 types of terms (programs) corresponds to theorems of some logic, and the programs corresponds to the proofs of 
 the theorems. So when a proposition $\psi$ can be proven from a set of premises, then there is derivation of some term 
