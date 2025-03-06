@@ -1,0 +1,6 @@
+.MJX-TEX[display="true"]{
+    /* y scrollable */
+    overflow-x:visible;
+    overflow-y:scroll;
+    white-space:nowrap;
+}

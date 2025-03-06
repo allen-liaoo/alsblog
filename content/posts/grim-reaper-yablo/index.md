@@ -8,7 +8,6 @@ cover:
   relative: true
 ---
 
-## Introduction
 Ok, the title is a bit of a click bait. I have a particular version of the Grim Reaper paradox in mind, namely the one that many uses to argue against the *logical* or *metaphysical* possibility of an infinite past. Here, I will show how this version of the Grim Reaper paradox is the Yablo paradox in disguise (although with some ~~important~~ differences), why that matters, and drawing from their parallel, conclude with why the Grim Reaper paradox fails to show the *im*possibility of an infinite past.
 
 ## The Twinning Paradoxes
