@@ -103,9 +103,8 @@
     height: 0;
 }
 
-.yscroll {
-    overflow-x:visible;
-    overflow-y:hidden;
+.xscroll {
+    overflow-x:scroll;
 }
 
 /* Custom scrollbar with feature detection */

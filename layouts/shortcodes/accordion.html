@@ -15,8 +15,8 @@
   {{ with (.Get 2)}}{{ $color = .}}{{end}}
 {{ end }}
 
-<div {{ if $hide }} class="accordion yscroll {{ $color }} hide"
-    {{ else }}class="accordion yscroll {{ $color }}" {{ end }}>
+<div {{ if $hide }} class="accordion xscroll {{ $color }} hide"
+    {{ else }}class="accordion xscroll {{ $color }}" {{ end }}>
 {{- /*  See extend_head.html for click event listener attached to the header */ -}}
 <div class="accordion-header">
 {{ $title | markdownify }}

@@ -1,6 +1,19 @@
-.MJX-TEX[display="true"]{
-    /* y scrollable */
-    overflow-x:visible;
-    overflow-y:scroll;
-    white-space:nowrap;
+.MathJax[display="true"] {
+    /* Make outer container width 100% and scrollable */
+    width: 100%;
+    overflow-x: scroll; 
+    overflow-y: hidden;     /* y should be hidden, which forces no vertical scrolling (everything on the page) */
 }
+
+.MJX-TEX[display="true"] {
+    overflow-x: visible; /* Inner container should NOT be scrollable, as its width should be as wide as possible */
+    overflow-y: visible;
+    white-space: nowrap;
+}
+
+/* 
+Bug: When certain content is too wide (i.e. proof), 
+overflow-x:visible in the inner container makes it not center-aligned,
+but changing to overflow-x:scroll makes it scrollable. 
+If width is 100% in inner container, equations becomes left aligned
+*/
