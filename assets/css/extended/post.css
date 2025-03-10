@@ -7,6 +7,10 @@
     /* 400px !important; */
 }
 
+.post-content {
+    font-family: var(--formal-font);
+}
+
 /* line/block spacing */
 /* allow MathJax elements to use more space */
 .post-content > :not(.MathJax) {

@@ -84,7 +84,7 @@
     */}}
     {{ if .Description }}
       <div class="post-description">
-        <blockquote><i>{{ .Description | markdownify | safeHTML }}</i></blockquote>
+        <blockquote>{{ .Description | markdownify | safeHTML }}</blockquote>
       </div>
     {{ end }}
     <p>{{ .Content | markdownify | safeHTML | truncate 1000 }}...</p>

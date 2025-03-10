@@ -18,6 +18,10 @@
     --theme-like-hover: rgb(255, 217, 170);
     
     --content-gap: 15px;
+
+    --normal-font: Helvetica, helvetica neue, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, sans-serif;
+    --formal-font: Lora, Georgia, Cambria, Times New Roman, Times, ui-serif, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, serif;
+    font-family: var(--normal-font);
 }
 
 /* Dark theme */
@@ -112,7 +116,12 @@
 }
 
 /* home page */
+.post-entry .entry-content{
+    font-family: var(--formal-font);
+}
+
 .post-entry .post-description {
+    font-family: var(--normal-font);
     margin-top: 0em;
     margin-bottom: 0.5em;
 }
